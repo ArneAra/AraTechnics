@@ -1,0 +1,211 @@
+html, body {
+  height: 100%;               /* Zorg ervoor dat het document de volledige hoogte van het scherm heeft */
+  margin: 5;                  /* Verwijder de standaardmarges */
+  display: flex;
+  flex-direction: column;     /* Zet de inhoud in een kolom */
+}
+
+
+
+.logo {
+  height: 50px;
+  float: right;
+}
+
+
+/*-----------nav-bar-----------*/
+
+
+.topnav {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: #333;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.topnav a {
+  font-family: Sans-serif;
+  width: fit-content;
+  max-width: 80px;
+  max-height: 30px;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #333;
+  border: 2px solid #2e9e44;
+  border-radius: 50px;
+  margin: 0 auto; 
+}
+
+.topnav a:hover {
+  background-color: #60d477;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #2e9e44;
+  color: white;
+}
+
+/*-------dark-mode------*/
+.light-mode {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.darkmodebutton {
+  background: none;
+  border: none; 
+  cursor: pointer;
+  float: right;
+  margin-top: center;
+}
+/*----------------------*/ 
+
+
+/*---------scroll-bar-------------*/ 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/*----------------------*/ 
+
+
+
+
+/*----------footer------------*/
+
+footer {
+  background-color: #333;
+  color: #f2f2f2;
+  padding: 20px;
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+}
+
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+
+.footer-left {
+  display: flex;
+  gap: 50px;
+}
+
+
+.footer-section {
+  min-width: 200px;
+}
+
+
+.footer-section h4 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+
+.footer-section a {
+  color: #2e9e44;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+
+
+footer p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+.footer-license {
+  flex-grow: 1; 
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+  footer {
+    width: 89%;
+  }
+
+  .footer-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .footer-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+
+/*----------------------*/
+
+.Text_img {
+
+  font-size: 18px;
+  font-family: Sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  float: left;
+}
+
+.foto_rechts_boven {
+  align-items: center;
+  float: right;
+  max-width: auto;
+  max-height: auto;
+  margin-left: 5px;
+  margin-top: 15px;  
+}

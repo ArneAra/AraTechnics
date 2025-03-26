@@ -19,3 +19,21 @@ function checkDarkMode() {
       document.body.classList.add("dark-mode"); // Zet dark mode aan als het is opgeslagen
   }
 }
+
+
+
+//----------------contact----------------------
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let mailtoLink = `mailto:info@aratechnics.be?subject=Contactformulier van ${name}&body=Naam: ${name}%0D%0ATelefoon: ${phone}%0D%0AE-mail: ${email}%0D%0ABericht: ${message}`;
+
+  window.location.href = mailtoLink;
+
+  document.getElementById("response-message").textContent = "Bericht verstuurd!";
+});

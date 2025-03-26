@@ -49,7 +49,20 @@
             <h4>Contact</h4>
             <p>Email: <a href="mailto:info@aratechnics.be">info@aratechnics.be</a></p>
             <p>Telefoon: +32 ...</p>
+            
         </div>
+
+        <div class="footer-section">
+          <h4>Stuur een bericht</h4>
+          <form id="contact-form">
+              <input type="text" id="name" name="name" placeholder="Naam" required>
+              <input type="tel" id="phone" name="phone" placeholder="Telefoonnummer" required>
+              <input type="email" id="email" name="email" placeholder="E-mail" required>
+              <textarea id="message" name="message" placeholder="Jouw bericht..." required></textarea>
+              <button type="submit">Versturen</button>
+          </form>
+          <p id="response-message"></p>
+      </div>
 
 
         <div class="footer-section">
@@ -61,12 +74,15 @@
 
 
 
-    <!-- Licentie-informatie -->
+  
+
+
     <div class="footer-section">
       <div class="footer-license">
         <p>© 2025 aratechnics Alle content beschikbaar onder <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Creative Commons Zero v1.0 Universal</a> licentie.</p>
       </div>
     </div>
+  </div>
 </footer>
 </body>
 </html>

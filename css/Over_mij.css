@@ -52,6 +52,16 @@ html, body {
   color: white;
 }
 
+
+
+
+
+
+
+
+
+
+
 /*-------dark-mode------*/
 .light-mode {
   background-color: white;
@@ -74,6 +84,18 @@ html, body {
 /*----------------------*/ 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*---------scroll-bar-------------*/ 
 ::-webkit-scrollbar {
   width: 5px;
@@ -94,6 +116,31 @@ html, body {
 }
 
 /*----------------------*/ 
+
+
+
+/*--------------------content------------------------*/
+
+
+.Text_img {
+
+  font-size: 18px;
+  font-family: Sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  float: left;
+}
+
+.foto_rechts_boven {
+  align-items: center;
+  float: right;
+  max-width: auto;
+  max-height: auto;
+  margin-left: 5px;
+  margin-top: 15px;  
+}
+
 
 
 
@@ -170,6 +217,8 @@ footer p {
 }
 
 
+/*----------------------------phone view------------------------*/
+
 @media (max-width: 768px) {
   footer {
     width: 89%;
@@ -190,23 +239,45 @@ footer p {
 }
 
 
+/*------------------------------------stuur een bericht-------------------------- */
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 350px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-section input, 
+.footer-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #2e9e44;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.footer-section textarea {
+    height: 100px;
+    resize: none;
+}
+
+.footer-section button {
+    background-color: #2e9e44;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.footer-section button:hover {
+    background-color: #60d477;
+}
+
+
+
 /*----------------------*/
-
-.Text_img {
-
-  font-size: 18px;
-  font-family: Sans-serif;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 10px;
-  float: left;
-}
-
-.foto_rechts_boven {
-  align-items: center;
-  float: right;
-  max-width: auto;
-  max-height: auto;
-  margin-left: 5px;
-  margin-top: 15px;  
-}

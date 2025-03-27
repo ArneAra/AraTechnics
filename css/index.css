@@ -52,16 +52,6 @@ html, body {
   color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
 /*-------dark-mode------*/
 .light-mode {
   background-color: white;
@@ -81,19 +71,8 @@ html, body {
   float: right;
   margin-top: center;
 }
+
 /*----------------------*/ 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*---------scroll-bar-------------*/ 
@@ -116,7 +95,6 @@ html, body {
 }
 
 /*----------------------*/ 
-
 
 
 
@@ -242,7 +220,7 @@ footer p {
 
 .footer-section button {
     background-color: #2e9e44;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px;
     cursor: pointer;

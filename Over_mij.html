@@ -54,14 +54,22 @@
 
         <div class="footer-section">
           <h4>Stuur een bericht</h4>
-          <form id="contact-form">
-              <input type="text" id="name" name="name" placeholder="Naam" required>
-              <input type="tel" id="phone" name="phone" placeholder="Telefoonnummer" required>
-              <input type="email" id="email" name="email" placeholder="E-mail" required>
-              <textarea id="message" name="message" placeholder="Jouw bericht..." required></textarea>
-              <button type="submit">Versturen</button>
-          </form>
-          <p id="response-message"></p>
+          <form action="https://formspree.io/f/meoaloqj" method="POST">
+            <label>Naam:</label>
+            <input type="text" name="name" placeholder="Naam" required>
+            
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="E-mail" required>
+            
+            <label>Telefoon:</label>
+            <input type="tel" placeholder="Telefoonnummer" name="phone">
+            
+            <label>Bericht:</label>
+            <textarea name="message" placeholder="Jouw bericht..." required></textarea>
+            
+            <button type="submit" href="https://aratechnics.be/bedankt.html" >Verstuur</button>
+        </form>
+        
       </div>
 
 

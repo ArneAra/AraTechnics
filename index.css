@@ -1,0 +1,378 @@
+/* index.css */
+:root {
+  --bg: #0f1720;
+  --card: #0b1220;
+  --muted: #9aa6b2;
+  --accent: #7ae691; /* groen tint voor knoppen en accenten */
+  --accent-dark: #3fd95f; /* voor hover of secundaire accent */
+  --text: #e6eef6;
+  --glass: rgba(255,255,255,0.03);
+  --max-width: 1100px;
+}
+
+
+
+
+
+/* === Algemene basis === */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #07101a;
+  color: var(--text);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+
+
+
+
+
+/* === Header === */
+.site-header {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  left: 0;            /* zorg dat hij helemaal links begint */
+  width: 100%;        /* vul volledige breedte */
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), transparent);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);  /* limiet zodat het gecentreerd blijft */
+  margin: 0 auto;               /* centreren */
+  padding: 1rem 2rem;           /* binnenruimte binnen de max-width */
+}
+
+
+.logo {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav a {
+  color: var(--muted);
+  margin: 0 0.6rem;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--accent-dark);
+}
+
+.cta {
+  background: var(--accent);
+  color: #0b0b0b;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: var(--accent-dark);
+}
+
+
+
+
+
+
+
+/* === Hero === */
+.hero {
+  padding: 4rem 0;
+  background: rgba(127, 127, 127, 0.05); /* subtiele groene tint */
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.hero .lead {
+  color: var(--text);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Hero knoppen */
+.hero .btn.request-btn {
+  background: var(--accent);
+  color: #0b0b0b;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero .btn.request-btn:hover {
+  background: var(--accent-dark);
+}
+
+
+
+
+
+
+
+/* === Buttons === */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #07101a;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+}
+
+
+
+
+
+
+
+
+
+
+/* === Secties === */
+.about,
+.services,
+.portfolio,
+.request,
+.contact {
+  padding: 2.5rem 0;
+}
+
+
+
+
+
+/* === Grids & Cards === */
+/* Portfolio grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px; /* alle kaarten even hoog */
+}
+
+.thumb {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass);
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+
+
+
+
+
+
+/* === custom aanvraag === */
+
+
+
+
+
+
+/* === Footer === */
+.site-footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  text-align: center;
+  color: var(--muted);
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links li a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social-links li a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* === Contact & Socials === */
+.contact a {
+  color: var(--accent); /* standaard groen (#7ae691) */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  color: var(--accent-dark); /* hover groen (#3fd95f) */
+  text-decoration: underline;
+}
+
+/* Specifiek voor ThrotleShop-link in de about sectie */
+.about a {
+  color: var(--accent); /* standaard groen (#7ae691) */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about a:hover {
+  color: #3fd95f; /* iets donkerder groen bij hover */
+  text-decoration: underline;
+}
+
+/* Links in de hero sectie (.lead) */
+.hero .lead a {
+  color: var(--accent); /* standaard groen (#7ae691) */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero .lead a:hover {
+  color: #3fd95f; /* iets donkerder groen bij hover */
+  text-decoration: underline;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+
+
+
+
+/* === Mobiele optimalisatie === */
+@media (max-width: 700px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .header-inner {
+    padding: 0.6rem 1rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  /* Extra padding voor alle secties op mobiel */
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero,
+  .about,
+  .services,
+  .portfolio,
+  .request,
+  .contact {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Knoppen en hero actions iets groter en makkelijk klikbaar */
+  .hero-actions .btn,
+  .form-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}

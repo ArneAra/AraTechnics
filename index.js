@@ -84,4 +84,3 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(currentLang === 'nl' ? 'en' : 'nl');
   });
 });
-

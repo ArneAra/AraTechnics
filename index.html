@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="nl">
 <head>
@@ -28,15 +27,16 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#">Ara Technics</a>
+      <a class="logo" href="#" data-lang="logo">Ara Technics</a>
       <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">Over mij</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#request">Aanvraag</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" data-lang="navHome">Home</a>
+        <a href="#about" data-lang="navAbout">Over mij</a>
+        <a href="#portfolio" data-lang="navPortfolio">Portfolio</a>
+        <a href="#request" data-lang="navRequest">Aanvraag</a>
+        <a href="#contact" data-lang="navContact">Contact</a>
       </nav>
-      <button class="cta" id="cta-shop">ThrotleShop</button>
+      <button class="cta" id="cta-shop" data-lang="shopBtn">ThrotleShop</button>
+      <button id="lang-toggle" class="cta small">EN</button>
     </div>
   </header>
 
@@ -48,11 +48,11 @@
   <main>
     <section id="home" class="hero">
       <div class="container">
-        <h1>Hoi, ik ben Arne <br> maker, ontwerper en autoliefhebber.</h1>
-        <p class="lead">Ik ontwerp en maak custom 3D-prints, lasercuts. Ik heb ook een <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer"> etsy shop</a> waar ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers verkoop.</p>
+        <h1 data-lang="homeTitle">Hoi, ik ben Arne <br> maker, ontwerper en autoliefhebber.</h1>
+        <p class="lead" data-lang="homeText">Ik ontwerp en maak custom 3D-prints, lasercuts. Ik heb ook een <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer"> etsy shop</a> waar ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers verkoop.</p>
         <div class="hero-actions">
-          <a href="#request" class="btn ">Doe een aanvraag</a>
-          <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Naar ThrotleShop</a>
+          <a href="#request" class="btn " data-lang="btnRequest">Doe een aanvraag</a>
+          <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-lang="btnShop">Naar ThrotleShop</a>
         </div>
       </div>
     </section>
@@ -62,22 +62,22 @@
 
 
 <section id="about" class="container about">
-  <h2>Over mij</h2>
+  <h2 data-lang="aboutTitle">Over mij</h2>
 
-  <p>Hoi, ik ben Arne — de persoon achter Ara Technics en ThrotleShop</p>
+  <p data-lang="aboutIntro">Hoi, ik ben Arne — de persoon achter Ara Technics en ThrotleShop</p>
 
-  <p>Wat ooit begon als een hobby in 3D-printen, lasersnijden en ontwerpen gewoon voor de lol, is inmiddels een passie geworden waar ik bijna al mijn vrije tijd aan besteed.</p>
+  <p data-lang="aboutStory1">Wat ooit begon als een hobby in 3D-printen, lasersnijden en ontwerpen gewoon voor de lol, is inmiddels een passie geworden waar ik bijna al mijn vrije tijd aan besteed.</p>
 
-  <p><strong>Wat ik zoal doe</strong><br>
-  Ik maak allerlei prints en laserprojecten, en ik programmeer graag. Deze website heb ik helemaal zelf gemaakt om te laten zien wat ik kan en doe. Ara Technics gaat voor mij vooral over het maken van dingen die handig, tof en op maat zijn.</p>
+  <p><strong data-lang="aboutWhat">Wat ik zoal doe</strong><br>
+  <span data-lang="aboutStory2">Ik maak allerlei prints en laserprojecten, en ik programmeer graag. Deze website heb ik helemaal zelf gemaakt om te laten zien wat ik kan en doe. Ara Technics gaat voor mij vooral over het maken van dingen die handig, tof en op maat zijn.</span></p>
 
-  <p>Op dit moment print en lasersnij ik vooral dingen voor mezelf, zoals bijvoorbeeld vaasjes, decoraties voor Halloween of Kerst, en andere kleine projecten. Maar ik zou het ook heel leuk vinden om in de toekomst voor andere mensen custom 3D-prints en laserprojecten te maken.</p>
+  <p data-lang="aboutStory3">Op dit moment print en lasersnij ik vooral dingen voor mezelf, zoals bijvoorbeeld vaasjes, decoraties voor Halloween of Kerst, en andere kleine projecten. Maar ik zou het ook heel leuk vinden om in de toekomst voor andere mensen custom 3D-prints en laserprojecten te maken.</p>
 
-  <p><strong>ThrotleShop</strong><br>
-  ThrotleShop staat een beetje los van Ara Technics. Hier verkoop ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers. Het is een plek om mijn creatieve ideeën en passie voor auto’s met anderen te delen. <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer">Bekijk ThrotleShop</a></p>
+  <p><strong data-lang="aboutShop">ThrotleShop</strong><br>
+  <span data-lang="aboutStory4">ThrotleShop staat een beetje los van Ara Technics. Hier verkoop ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers. Het is een plek om mijn creatieve ideeën en passie voor auto’s met anderen te delen. <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer">Bekijk ThrotleShop</a></span></p>
 
-  <p><strong>Bedankt!</strong><br>
-  Bedankt dat je op mijn site kijkt en een kleine maker als ik steunt. Samen houden we de liefde voor techniek, ontwerpen en creatieve projecten levend!</p>
+  <p><strong data-lang="aboutThanksTitle">Bedankt!</strong><br>
+  <span data-lang="aboutThanksText">Bedankt dat je op mijn site kijkt en een kleine maker als ik steunt. Samen houden we de liefde voor techniek, ontwerpen en creatieve projecten levend!</span></p>
 </section>
 
 
@@ -86,27 +86,27 @@
 
 
 <section id="portfolio" class="container portfolio">
-  <h2>Portfolio</h2>
+  <h2 data-lang="portfolioTitle">Portfolio</h2>
   
   <div class="cards" id="portfolio-main">
     <div class="card">
-      <div class="thumb">3D</div>
-      <h4>Custom mount voor dashcam</h4>
-      <p>Kleine oplage voor clubmeet — fit & finish op maat.</p>
+      <div class="thumb" data-lang="item1Title">3D</div>
+      <h4 data-lang="item1Title">Custom mount voor dashcam</h4>
+      <p data-lang="item1Text">Kleine oplage voor clubmeet — fit & finish op maat.</p>
     </div>
 
     <div class="card">
-      <div class="thumb">Laser</div>
-      <h4>Gegraveerde naamplaatjes</h4>
-      <p>Houten naamplaatjes en badges voor interieur en events.</p>
+      <div class="thumb" data-lang="item2Title">Laser</div>
+      <h4 data-lang="item2Title">Gegraveerde naamplaatjes</h4>
+      <p data-lang="item2Text">Houten naamplaatjes en badges voor interieur en events.</p>
     </div>
 
     <div class="card">
       <div class="thumb">
         <img src="fotos/portfolio" alt="Kleding">
       </div>
-      <h4>Limited edition T-shirts</h4>
-      <p>Designs geïnspireerd door old-school racecultuur.</p>
+      <h4 data-lang="item3Title">Limited edition T-shirts</h4>
+      <p data-lang="item3Text">Designs geïnspireerd door old-school racecultuur.</p>
     </div>
 
   </div>
@@ -118,30 +118,30 @@
       <div class="thumb">
       <img src="fotos/portfolio" alt="Nieuwe T-shirt">
       </div>
-      <h4>Miniatuur raceauto</h4>
-      <p>3D-geprint model van een raceauto voor decoratie.</p>
+      <h4 data-lang="item4Title">Miniatuur raceauto</h4>
+      <p data-lang="item4Text">3D-geprint model van een raceauto voor decoratie.</p>
     </div>
 
     <div class="card">
       <div class="thumb">
       <img src="fotos/portfolio" alt="Nieuwe T-shirt">
       </div>
-      <h4>Gegraveerde sleutelhangers</h4>
-      <p>Set sleutelhangers met namen of logo’s.</p>
+      <h4 data-lang="item5Title">Gegraveerde sleutelhangers</h4>
+      <p data-lang="item5Text">Set sleutelhangers met namen of logo’s.</p>
     </div>
 
     <div class="card">
       <div class="thumb">
       <img src="fotos/portfolio" alt="Nieuwe T-shirt">
       </div>
-      <h4>Nieuwe T-shirt design</h4>
-      <p>Limited edition T-shirt voor petrolheads.</p>
+      <h4 data-lang="item6Title">Nieuwe T-shirt design</h4>
+      <p data-lang="item6Text">Limited edition T-shirt voor petrolheads.</p>
     </div>
 
   </div>
 
-  <button id="load-more" class="btn">Toon meer</button>
-  <button id="show-less" class="btn">Toon minder</button>
+  <button id="load-more" class="btn" data-lang="btnMore">Toon meer</button>
+  <button id="show-less" class="btn" data-lang="btnLess">Toon minder</button>
 </section>
 
 
@@ -153,48 +153,47 @@
 
 
 <section id="request" class="container request">
-  <h2>Custom aanvraag</h2>
-  <p>
+  <h2 data-lang="requestTitle">Custom aanvraag</h2>
+  <p data-lang="requestText">
     Vul alle informatie in die je wilt delen over je project, zoals materiaal, afmetingen, hoeveelheid, deadline of budget.  
     Voeg indien mogelijk een voorbeeldfoto of een bestand toe.  
-    Ik probeer binnen <strong>48 uur</strong> te reageren.
+    Ik probeer binnen <strong>48 uur</strong> te reageren (alleen België regio Antwerpen/Oost-Vlaanderen/Vlaams-Brabant).
   </p>
 
   <p>
-    E-mail: <span class="copy-text" data-copy="info@aratechnics.be">info@aratechnics.be</span>
+    <span data-lang="requestEmail">E-mail:</span> <span class="copy-text" data-copy="info@aratechnics.be">info@aratechnics.be</span>
   </p>
 
-<div id="copy-popup">Gekopieerd!</div>
-
+<div id="copy-popup" data-lang="copied">Gekopieerd!</div>
 </section>
 
 
 
 
 
-
-
-
-
     <section id="contact" class="container contact">
-      <h2>Contact & Socials</h2>
-      <p>E-mail: <span class="copy-text" data-copy="info@aratechnics.be">info@aratechnics.be</span></p>
-      <p>Volg mij op social media:</p>
+     <h2 data-lang="contactTitle">Contact & Socials</h2>
+     <p><span data-lang="contactEmail">E-mail:</span> <span class="copy-text" data-copy="info@aratechnics.be">info@aratechnics.be</span></p>
+      <p data-lang="contactFollow">Volg mij op social media:</p>
       <ul class="social-links">
-        <li><a href="https://www.pinterest.com/throttleshop/_saved/" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61578725276672" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-        <li><a href="https://www.instagram.com/throtle_shop/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@throttleshop" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+       <li><a href="https://www.pinterest.com/throttleshop/_saved/" target="_blank" rel="noopener noreferrer" data-lang="socialPinterest">Pinterest</a></li>
+       <li><a href="https://www.facebook.com/profile.php?id=61578725276672" target="_blank" rel="noopener noreferrer" data-lang="socialFacebook">Facebook</a></li>
+        <li><a href="https://www.instagram.com/throtle_shop/" target="_blank" rel="noopener noreferrer" data-lang="socialInstagram">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@throttleshop" target="_blank" rel="noopener noreferrer" data-lang="socialTiktok">TikTok</a></li>
       </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> Ara Technics — Arne</small>
+      <small data-lang="footerText">© <span id="year"></span> Ara Technics — Arne</small>
     </div>
   </footer>
 
+
   <script src="index.js"></script>
+  <script src="lang.js"></script>
+
+
 </body>
 </html>

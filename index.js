@@ -50,3 +50,38 @@ document.querySelectorAll(".copy-text").forEach(el => {
     });
   });
 });
+
+
+
+// translation
+document.addEventListener('DOMContentLoaded', () => {
+  const langToggle = document.getElementById('lang-toggle');
+  let currentLang = 'nl'; // standaard Nederlands
+
+  // Sla de originele NL-teksten op
+  const originalTexts = {};
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    const key = el.getAttribute('data-lang');
+    originalTexts[key] = el.innerText;
+  });
+
+  function setLanguage(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      const key = el.getAttribute('data-lang');
+      if(lang === 'en') {
+        el.innerText = translations.en[key] || el.innerText;
+      } else {
+        // terug naar NL
+        el.innerText = originalTexts[key];
+      }
+    });
+
+    langToggle.textContent = lang === 'nl' ? 'EN' : 'NL';
+    currentLang = lang;
+  }
+
+  langToggle.addEventListener('click', () => {
+    setLanguage(currentLang === 'nl' ? 'en' : 'nl');
+  });
+});
+

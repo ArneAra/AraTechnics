@@ -47,7 +47,7 @@ const translations = {
     // REQUEST
     requestTitle: "Custom request",
     requestText: "Fill in all details about your project — like materials, dimensions, quantity, deadline or budget. Add a reference photo or file if possible. I’ll try to reply within 48 hours (only Belgium — Antwerp/East Flanders/Flemish Brabant region).",
-    requestEmail: "Email:",
+    requestButton: "Send Email",
 
     // CONTACT
     contactTitle: "Contact & Socials",

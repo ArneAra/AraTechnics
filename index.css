@@ -1,148 +1,96 @@
-<!doctype html>
-<html lang="nl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ara Technics — 3D, Laser & ThrotleShop</title>
-  <link rel="icon" type="image/png" href="fotos/aratechnics round.png" />
-  <link rel="stylesheet" href="index.css">
-</head>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9VLHBH17XT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9VLHBH17XT');
-</script>
+/* index.css */
+:root {
+  --bg: #0f1720;
+  --card: #0b1220;
+  --muted: #9aa6b2;
+  --accent: #7ae691; /* groen tint voor knoppen en accenten */
+  --accent-dark: #3fd95f; /* voor hover of secundaire accent */
+  --text: #e6eef6;
+  --glass: rgba(255,255,255,0.03);
+  --max-width: 1100px;
+}
 
 
 
 
 
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#" data-lang="logo">Ara Technics</a>
-      <nav class="nav">
-        <a href="#home" data-lang="navHome">Home</a>
-        <a href="#about" data-lang="navAbout">Over mij</a>
-        <a href="#portfolio" data-lang="navPortfolio">Portfolio</a>
-        <a href="#request" data-lang="navRequest">Aanvraag</a>
-        <a href="#contact" data-lang="navContact">Contact</a>
-      </nav>
-      <button class="cta" id="cta-shop" data-lang="shopBtn">ThrotleShop</button>
-      <button id="lang-toggle" class="cta small">EN</button>
-    </div>
-  </header>
+/* === Algemene basis === */
+* {
+  box-sizing: border-box;
+}
 
+html,
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #07101a;
+  color: var(--text);
+}
 
-
-
-
-  
-  <main>
-    <section id="home" class="hero">
-      <div class="container">
-        <h1 data-lang="homeTitle">Hoi, ik ben Arne <br> maker, ontwerper en autoliefhebber.</h1>
-        <p class="lead" data-lang="homeText">Ik ontwerp en maak custom 3D-prints, lasercuts. Ik heb ook een <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer"> etsy shop</a> waar ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers verkoop.</p>
-        <div class="hero-actions">
-          <a href="#request" class="btn " data-lang="btnRequest">Doe een aanvraag</a>
-          <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-lang="btnShop">Naar ThrotleShop</a>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-<section id="about" class="container about">
-  <h2 data-lang="aboutTitle">Over mij</h2>
-
-  <p data-lang="aboutIntro">Hoi, ik ben Arne — de persoon achter Ara Technics en ThrotleShop</p>
-
-  <p data-lang="aboutStory1">Wat ooit begon als een hobby in 3D-printen, lasersnijden en ontwerpen gewoon voor de lol, is inmiddels een passie geworden waar ik bijna al mijn vrije tijd aan besteed.</p>
-
-  <p><strong data-lang="aboutWhat">Wat ik zoal doe</strong><br>
-  <span data-lang="aboutStory2">Ik maak allerlei prints en laserprojecten, en ik programmeer graag. Deze website heb ik helemaal zelf gemaakt om te laten zien wat ik kan en doe. Ara Technics gaat voor mij vooral over het maken van dingen die handig, tof en op maat zijn.</span></p>
-
-  <p data-lang="aboutStory3">Op dit moment print en lasersnij ik vooral dingen voor mezelf, zoals bijvoorbeeld vaasjes, decoraties voor Halloween of Kerst, en andere kleine projecten. Maar ik zou het ook heel leuk vinden om in de toekomst voor andere mensen custom 3D-prints en laserprojecten te maken.</p>
-
-  <p><strong data-lang="aboutShop">ThrotleShop</strong><br>
-  <span data-lang="aboutStory4">ThrotleShop staat een beetje los van Ara Technics. Hier verkoop ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers. Het is een plek om mijn creatieve ideeën en passie voor auto’s met anderen te delen. <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer">Bekijk ThrotleShop</a></span></p>
-
-  <p><strong data-lang="aboutThanksTitle">Bedankt!</strong><br>
-  <span data-lang="aboutThanksText">Bedankt dat je op mijn site kijkt en een kleine maker als ik steunt. Samen houden we de liefde voor techniek, ontwerpen en creatieve projecten levend!</span></p>
-</section>
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
 
 
 
 
 
 
-<section id="portfolio" class="container portfolio">
-  <h2 data-lang="portfolioTitle">Portfolio</h2>
-  
-  <div class="cards" id="portfolio-main">
-    <div class="card">
-      <div class="thumb" data-lang="item1Title">3D</div>
-      <h4 data-lang="item1Title">Custom mount voor dashcam</h4>
-      <p data-lang="item1Text">Kleine oplage voor clubmeet — fit & finish op maat.</p>
-    </div>
+/* === Header === */
+.site-header {
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  left: 0;            /* zorg dat hij helemaal links begint */
+  width: 100%;        /* vul volledige breedte */
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), transparent);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  z-index: 1000;
+}
 
-    <div class="card">
-      <div class="thumb" data-lang="item2Title">Laser</div>
-      <h4 data-lang="item2Title">Gegraveerde naamplaatjes</h4>
-      <p data-lang="item2Text">Houten naamplaatjes en badges voor interieur en events.</p>
-    </div>
-
-    <div class="card">
-      <div class="thumb">
-        <img src="fotos/portfolio" alt="Kleding">
-      </div>
-      <h4 data-lang="item3Title">Limited edition T-shirts</h4>
-      <p data-lang="item3Text">Designs geïnspireerd door old-school racecultuur.</p>
-    </div>
-
-  </div>
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);  /* limiet zodat het gecentreerd blijft */
+  margin: 0 auto;               /* centreren */
+  padding: 1rem 2rem;           /* binnenruimte binnen de max-width */
+}
 
 
-  <div class="cards" id="portfolio-extra" >
+.logo {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
 
-    <div class="card">
-      <div class="thumb">
-      <img src="fotos/portfolio" alt="Nieuwe T-shirt">
-      </div>
-      <h4 data-lang="item4Title">Miniatuur raceauto</h4>
-      <p data-lang="item4Text">3D-geprint model van een raceauto voor decoratie.</p>
-    </div>
+.nav a {
+  color: var(--muted);
+  margin: 0 0.6rem;
+  text-decoration: none;
+}
 
-    <div class="card">
-      <div class="thumb">
-      <img src="fotos/portfolio" alt="Nieuwe T-shirt">
-      </div>
-      <h4 data-lang="item5Title">Gegraveerde sleutelhangers</h4>
-      <p data-lang="item5Text">Set sleutelhangers met namen of logo’s.</p>
-    </div>
+.nav a:hover {
+  color: var(--accent-dark);
+}
 
-    <div class="card">
-      <div class="thumb">
-      <img src="fotos/portfolio" alt="Nieuwe T-shirt">
-      </div>
-      <h4 data-lang="item6Title">Nieuwe T-shirt design</h4>
-      <p data-lang="item6Text">Limited edition T-shirt voor petrolheads.</p>
-    </div>
+.cta {
+  background: var(--accent);
+  color: #0b0b0b;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-  </div>
-
-  <button id="load-more" class="btn" data-lang="btnMore">Toon meer</button>
-  <button id="show-less" class="btn" data-lang="btnLess">Toon minder</button>
-</section>
+.cta:hover {
+  background: var(--accent-dark);
+}
 
 
 
@@ -150,50 +98,380 @@
 
 
 
+/* === Hero === */
+.hero {
+  padding: 4rem 0;
+  background: rgba(127, 127, 127, 0.05); /* subtiele groene tint */
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.hero .lead {
+  color: var(--text);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Hero knoppen */
+.hero .btn.request-btn {
+  background: var(--accent);
+  color: #0b0b0b;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero .btn.request-btn:hover {
+  background: var(--accent-dark);
+}
 
 
-<section id="request" class="container request">
-  <h2 data-lang="requestTitle">Custom aanvraag</h2>
-  <p data-lang="requestText">
-    Vul alle informatie in die je wilt delen over je project, zoals materiaal, afmetingen, hoeveelheid, deadline of budget.  
-    Voeg indien mogelijk een voorbeeldfoto of een bestand toe.  
-    Ik probeer binnen <strong>48 uur</strong> te reageren (alleen België regio Antwerpen/Oost-Vlaanderen/Vlaams-Brabant).
-  </p>
-
-  <p>
-    <span data-lang="requestEmail">E-mail:</span> <span class="copy-text" data-copy="info@aratechnics.be">info@aratechnics.be</span>
-  </p>
-
-<div id="copy-popup" data-lang="copied">Gekopieerd!</div>
-</section>
 
 
 
 
 
-    <section id="contact" class="container contact">
-     <h2 data-lang="contactTitle">Contact & Socials</h2>
-     <p><span data-lang="contactEmail">E-mail:</span> <span class="copy-text" data-copy="info@aratechnics.be">info@aratechnics.be</span></p>
-      <p data-lang="contactFollow">Volg mij op social media:</p>
-      <ul class="social-links">
-       <li><a href="https://www.pinterest.com/throttleshop/_saved/" target="_blank" rel="noopener noreferrer" data-lang="socialPinterest">Pinterest</a></li>
-       <li><a href="https://www.facebook.com/profile.php?id=61578725276672" target="_blank" rel="noopener noreferrer" data-lang="socialFacebook">Facebook</a></li>
-        <li><a href="https://www.instagram.com/throtle_shop/" target="_blank" rel="noopener noreferrer" data-lang="socialInstagram">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@throttleshop" target="_blank" rel="noopener noreferrer" data-lang="socialTiktok">TikTok</a></li>
-      </ul>
-    </section>
-  </main>
+/* === Buttons === */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #07101a;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
 
-  <footer class="site-footer">
-    <div class="container">
-      <small data-lang="footerText">© <span id="year"></span> Ara Technics — Arne</small>
-    </div>
-  </footer>
+.btn:hover {
+  background: var(--accent-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+}
 
 
-  <script src="index.js"></script>
-  <script src="lang.js"></script>
+
+/* === translation === */
+.cta.small {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.4rem 0.7rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.cta.small:hover {
+  background: var(--accent);
+  color: #0b0b0b;
+}
 
 
-</body>
-</html>
+
+
+
+
+
+
+
+
+/* === Secties === */
+.about,
+.services,
+.portfolio,
+.request,
+.contact {
+  padding: 2.5rem 0;
+}
+
+
+
+
+
+/* === Grids & Cards === */
+/* Portfolio grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px; /* alle kaarten even hoog */
+}
+
+.thumb {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass);
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+#portfolio-extra {
+  display: none;
+}
+
+#portfolio-extra.show {
+  display: grid;
+}
+
+.btn-margin {
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+
+
+
+
+
+
+/* === custom aanvraag === */
+.copy-text {
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.copy-text:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+/* Popup styling */
+#copy-popup {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: #0b0b0b;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, bottom 0.4s ease;
+  z-index: 9999;
+}
+
+/* Zichtbaar als actief */
+#copy-popup.show {
+  opacity: 1;
+  bottom: 50px;
+}
+
+
+
+
+
+
+/* === Footer === */
+.site-footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  text-align: center;
+  color: var(--muted);
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links li a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social-links li a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* === Contact & Socials === */
+.contact a {
+  color: var(--accent); /* standaard groen (#7ae691) */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  color: var(--accent-dark); /* hover groen (#3fd95f) */
+  text-decoration: underline;
+}
+
+/* Specifiek voor ThrotleShop-link in de about sectie */
+.about a {
+  color: var(--accent); /* standaard groen (#7ae691) */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about a:hover {
+  color: #3fd95f; /* iets donkerder groen bij hover */
+  text-decoration: underline;
+}
+
+/* Links in de hero sectie (.lead) */
+.hero .lead a {
+  color: var(--accent); /* standaard groen (#7ae691) */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero .lead a:hover {
+  color: #3fd95f; /* iets donkerder groen bij hover */
+  text-decoration: underline;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+
+
+
+
+/* === Mobiele optimalisatie === */
+@media (max-width: 700px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .header-inner {
+    padding: 0.6rem 1rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  /* Extra padding voor alle secties op mobiel */
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero,
+  .about,
+  .services,
+  .portfolio,
+  .request,
+  .contact {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Knoppen en hero actions iets groter en makkelijk klikbaar */
+  .hero-actions .btn,
+  .form-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+
+
+/*scroll bar */
+
+/* Voor Chrome, Edge en Safari */
+::-webkit-scrollbar {
+  width: 8px; /* dikte van de scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1220; /* achtergrond van de scroll track */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3fd95f; /* kleur van de "grip" */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7ae691; /* hover kleur */
+}
+

@@ -1,26 +1,29 @@
-/* index.css */
+/*   =========================================
+     ARA TECHNICS - layout Hoofd pagina
+     Auteur: Arne (Ara Technics)
+     ========================================= */
+
+
+/* =========================================================
+   🎨 KLEUREN EN BASISVARIABELEN
+========================================================= */
 :root {
   --bg: #0f1720;
   --card: #0b1220;
   --muted: #9aa6b2;
-  --accent: #7ae691; /* groen tint voor knoppen en accenten */
-  --accent-dark: #3fd95f; /* voor hover of secundaire accent */
+  --accent: #7ae691;
+  --accent-dark: #3fd95f;
   --text: #e6eef6;
   --glass: rgba(255,255,255,0.03);
   --max-width: 1100px;
 }
 
+/* =========================================================
+   🧱 BASISSTIJLEN
+========================================================= */
+* { box-sizing: border-box; }
 
-
-
-
-/* === Algemene basis === */
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
+html, body {
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
@@ -29,27 +32,32 @@ body {
   color: var(--text);
 }
 
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem;
 }
 
-
-
-
-
-
-/* === Header === */
+/* =========================================================
+   🧭 HEADER
+========================================================= */
 .site-header {
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
   position: fixed;
-  top: 0;
-  left: 0;            /* zorg dat hij helemaal links begint */
-  width: 100%;        /* vul volledige breedte */
+  top: 0; left: 0;
+  width: 100%;
   background: linear-gradient(180deg, rgba(0,0,0,0.35), transparent);
   border-bottom: 1px solid rgba(255,255,255,0.03);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   z-index: 1000;
 }
 
@@ -57,108 +65,77 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: var(--max-width);  /* limiet zodat het gecentreerd blijft */
-  margin: 0 auto;               /* centreren */
-  padding: 1rem 2rem;           /* binnenruimte binnen de max-width */
+  padding: 1rem 2rem;
 }
-
 
 .logo {
   font-weight: 700;
   color: var(--accent);
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* === Hamburger menu === */
+.hamburger {
+  display: none;
+  width: 40px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  margin: 6px 0;
+  width: 100%;
+  background: var(--text);
+  border-radius: 3px;
+  opacity: 0.9;
+}
+
+/* === Navigatie === */
 .nav a {
   color: var(--muted);
   margin: 0 0.6rem;
   text-decoration: none;
 }
-
 .nav a:hover {
   color: var(--accent-dark);
 }
 
+/* =========================================================
+   🔘 BUTTONS
+========================================================= */
 .cta {
   background: var(--accent);
   color: #0b0b0b;
   border: none;
-  padding: 0.5rem 0.9rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
 }
-
+.cta.small {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+}
 .cta:hover {
   background: var(--accent-dark);
+  color: #07101a;
 }
 
-
-
-
-
-
-
-/* === Hero === */
-.hero {
-  padding: 4rem 0;
-  background: rgba(127, 127, 127, 0.05); /* subtiele groene tint */
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--accent);
-}
-
-.hero .lead {
-  color: var(--text);
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 1.5rem auto;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  margin-bottom: 1rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.hero-note {
-  color: var(--muted);
-  font-size: 0.95rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.5;
-}
-
-/* Hero knoppen */
-.hero .btn.request-btn {
-  background: var(--accent);
-  color: #0b0b0b;
-  font-weight: 600;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.hero .btn.request-btn:hover {
-  background: var(--accent-dark);
-}
-
-
-
-
-
-
-
-/* === Buttons === */
+/* Universele knoppen */
 .btn {
   display: inline-block;
   padding: 0.6rem 1rem;
@@ -168,62 +145,44 @@ body {
   text-decoration: none;
   border: none;
   cursor: pointer;
+  font-weight: 600;
 }
-
-.btn:hover {
-  background: var(--accent-dark);
-}
-
 .btn-ghost {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.06);
   color: var(--text);
 }
+.btn-margin { margin-top: 0.8rem; }
 
-
-
-/* === translation === */
-.cta.small {
-  background: transparent;
-  border: 1px solid var(--accent);
+/* =========================================================
+   🌄 HERO SECTIE
+========================================================= */
+.hero {
+  padding: 3rem 0;
+  margin-top: 0;
+  text-align: center;
+  background: rgba(127,127,127,0.03);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  margin-bottom: 1rem;
   color: var(--accent);
-  padding: 0.4rem 0.7rem;
-  margin-left: 0.5rem;
-  cursor: pointer;
+}
+.hero .lead {
+  color: var(--text);
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
 }
 
-.cta.small:hover {
-  background: var(--accent);
-  color: #0b0b0b;
-}
-
-
-
-
-
-
-
-
-
-
-/* === Secties === */
-.about,
-.services,
-.portfolio,
-.request,
-.contact {
-  padding: 2.5rem 0;
-}
-
-
-
-
-
-/* === Grids & Cards === */
-/* Portfolio grid */
+/* =========================================================
+   🧩 ALGEMENE KAARTEN OPMAAK
+========================================================= */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
   align-items: start;
 }
@@ -232,79 +191,169 @@ body {
   background: var(--card);
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
   display: flex;
   flex-direction: column;
-  min-height: 320px; /* alle kaarten even hoog */
+  min-height: 240px;
 }
 
 .thumb {
-  height: 110px;
+  aspect-ratio: 1 / 1;
+  width: 90%;
+  margin: 0 auto 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--glass);
   border-radius: 8px;
-  margin-bottom: 0.6rem;
   font-weight: 700;
+  overflow: hidden;
 }
-
 .thumb img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 6px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
+/* =========================================================
+   ⚙️ SERVICES SECTIE
+========================================================= */
+.services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: stretch;
 }
 
-#portfolio-extra {
-  display: none;
+.services .service-card {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  min-height: 200px;
+  text-align: center;
+  border-radius: 10px;
 }
 
-#portfolio-extra.show {
-  display: grid;
+.services .service-icon {
+  font-size: 8rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
-.btn-margin {
+.services .service-card p {
+  flex-grow: 1;
+  margin: 0.5rem 0;
+}
+
+/* =========================================================
+   💼 PORTFOLIO SECTIE
+========================================================= */
+
+/* Initieel verbergen van extra kaarten */
+#portfolio-extra { display: none; }
+
+.portfolio-actions {
+  text-align: center;
   margin-top: 1rem;
 }
 
-.hidden {
-  display: none !important;
+.hidden { display: none; }
+
+/* Layout en hoogte van portfolio kaarten */
+.portfolio .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
 }
 
-.thumb img {
+.portfolio .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  text-align: left;
+  height: 100%;
+  min-height: 320px;
+}
+
+.portfolio .thumb {
+  aspect-ratio: 1 / 1;
   width: 100%;
-  height: auto;
-  border-radius: 6px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  background: var(--glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lange icon */
+.large-icon {
+  display: flex;             
+  align-items: center;    
+  justify-content: center;
+  height: 100%;
+}
+
+/* Groot icoon */
+.large-icon div {
+  font-size: 10rem;           
+  line-height: 1;
 }
 
 
 
 
+/* =========================================================
+   ✉️ CONTACTFORMULIER
+========================================================= */
+.contact-form { max-width: 900px; margin-top: 1rem; }
 
-
-
-/* === custom aanvraag === */
-.copy-text {
-  color: var(--accent);
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
 }
-
-.copy-text:hover {
-  color: var(--accent-dark);
-  text-decoration: underline;
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: transparent;
+  color: var(--text);
 }
+.form-row textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-actions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+.note { color: var(--muted); margin-top: 0.6rem; }
 
-/* Popup styling */
+/* =========================================================
+   📋 COPY POPUP
+========================================================= */
 #copy-popup {
   position: fixed;
   bottom: 30px;
@@ -317,22 +366,17 @@ body {
   font-weight: 600;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease, bottom 0.4s ease;
+  transition: opacity 0.35s ease, bottom 0.35s ease;
   z-index: 9999;
 }
-
-/* Zichtbaar als actief */
 #copy-popup.show {
   opacity: 1;
   bottom: 50px;
 }
 
-
-
-
-
-
-/* === Footer === */
+/* =========================================================
+   ⚫ FOOTER + SOCIALS
+========================================================= */
 .site-footer {
   padding: 1.5rem 0;
   border-top: 1px solid rgba(255,255,255,0.03);
@@ -347,131 +391,27 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
 }
-
 .social-links li a {
   color: var(--accent);
-  text-decoration: none;
   font-weight: 600;
 }
 
-.social-links li a:hover {
-  color: var(--accent-dark);
-  text-decoration: underline;
+/* =========================================================
+   📱 RESPONSIVE
+========================================================= */
+@media (max-width: 900px) {
+  .header-inner { padding: 0.6rem 1rem; }
+  .nav { display: none; }
+  .hamburger { display: none; }
+  .form-row { flex-direction: column; }
+  .container { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .hero h1 { font-size: 1.8rem; }
 }
 
-
-
-
-
-
-
-/* === Contact & Socials === */
-.contact a {
-  color: var(--accent); /* standaard groen (#7ae691) */
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.contact a:hover {
-  color: var(--accent-dark); /* hover groen (#3fd95f) */
-  text-decoration: underline;
-}
-
-/* Specifiek voor ThrotleShop-link in de about sectie */
-.about a {
-  color: var(--accent); /* standaard groen (#7ae691) */
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.about a:hover {
-  color: #3fd95f; /* iets donkerder groen bij hover */
-  text-decoration: underline;
-}
-
-/* Links in de hero sectie (.lead) */
-.hero .lead a {
-  color: var(--accent); /* standaard groen (#7ae691) */
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.hero .lead a:hover {
-  color: #3fd95f; /* iets donkerder groen bij hover */
-  text-decoration: underline;
-}
-
-.thumb img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-
-
-
-
-/* === Mobiele optimalisatie === */
-@media (max-width: 700px) {
-  .form-row {
-    flex-direction: column;
-  }
-
-  .header-inner {
-    padding: 0.6rem 1rem;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  /* Extra padding voor alle secties op mobiel */
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .hero,
-  .about,
-  .services,
-  .portfolio,
-  .request,
-  .contact {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  /* Knoppen en hero actions iets groter en makkelijk klikbaar */
-  .hero-actions .btn,
-  .form-actions .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-}
-
-
-
-
-/*scroll bar */
-
-/* Voor Chrome, Edge en Safari */
-::-webkit-scrollbar {
-  width: 8px; /* dikte van de scrollbar */
-}
-
-::-webkit-scrollbar-track {
-  background: #0b1220; /* achtergrond van de scroll track */
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3fd95f; /* kleur van de "grip" */
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #7ae691; /* hover kleur */
-}
-
+/* =========================================================
+   🖱️ SCROLLBAR
+========================================================= */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0b1220; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #3fd95f; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #7ae691; }

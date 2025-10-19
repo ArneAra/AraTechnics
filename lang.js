@@ -1,65 +1,87 @@
-// lang.js
+/* =====================================================
+   ARA TECHNICS - TAALBESTAND (EN)
+   Auteur: Arne (Ara Technics)
+   ===================================================== */
+
 const translations = {
   en: {
-    // NAV
+    logo: "Ara Technics",
     navHome: "Home",
-    navAbout: "About",
+    navAbout: "About me",
+    navServices: "Services",
     navPortfolio: "Portfolio",
-    navRequest: "Request",
     navContact: "Contact",
     shopBtn: "ThrotleShop",
-
-    // HERO
-    homeTitle: "Hi, I'm Arne — maker, designer and car enthusiast.",
-    homeText: "I design and create custom 3D prints and laser cuts. I also run an Etsy shop where I sell shirts, bags, posters, and other cool items for petrolheads and car lovers.",
-    btnRequest: "Make a request",
-    btnShop: "Visit ThrotleShop",
-
-    // ABOUT
+    homeTitle: "Hi, I’m Arne <br> maker, designer and car enthusiast.",
+    homeText:
+      "I design and create custom <strong>Websites, 3D prints and Laser cuts</strong>. I also run an <a href='http://www.throtleshop.etsy.com/' target='_blank' rel='noopener noreferrer'>Etsy shop</a> where I sell clothing, bags, posters and other fun items for petrolheads and car enthusiasts.",
+    btnServices: "View services",
+    btnContact: "Contact me",
     aboutTitle: "About me",
-    aboutIntro: "Hi, I'm Arne — the person behind Ara Technics and ThrotleShop.",
-    aboutStory1: "What started as a hobby in 3D printing, laser cutting and design just for fun, has become a passion I spend almost all my free time on.",
-    aboutWhat: "What I do",
-    aboutStory2: "I make all kinds of prints and laser projects, and I enjoy programming too. I built this website myself to show what I can do. Ara Technics is all about creating things that are useful, cool, and custom.",
-    aboutStory3: "Right now, I mostly print and laser-cut things for myself — like vases, Halloween or Christmas decorations, and other small projects. But I'd love to start making custom 3D prints and laser projects for others as well.",
-    aboutShop: "ThrotleShop",
-    aboutStory4: "ThrotleShop is a bit separate from Ara Technics. There I sell clothing, bags, posters and other fun stuff for petrolheads and car lovers — it’s a place to share my creativity and passion for cars.",
-    aboutThanksTitle: "Thanks!",
-    aboutThanksText: "Thanks for visiting my site and supporting a small creator like me. Together we keep the love for design, tech and creative projects alive!",
-
-    // PORTFOLIO
+    aboutText1: "Hi, I’m Arne — the creator behind <strong>Ara Technics</strong> and <strong>ThrotleShop</strong>.",
+    aboutText2:
+      "I enjoy building custom websites for friends and acquaintances. I also make <strong>3D prints, laser cut projects</strong> and personalized products such as bags, bottles and keychains, <a href='#' id='toggle-about' class='more-link'>Show more</a>.",
+    aboutText3:
+      "ThrotleShop is my side project, where I sell automotive-inspired clothing and accessories on Etsy. <a href='https://throtleshop.etsy.com' target='_blank' rel='noopener noreferrer'>Visit ThrotleShop</a>",
+    aboutText4:
+      "Thanks for stopping by and checking out my work — I love programming, designing and creating with passion.",
+    servicesTitle: "What I offer",
+    webTitle: "Websites",
+    webText:
+      "Simple websites and portfolios, with plans to expand in the future. I focus on speed, usability and clean, modern design.",
+    "3dTitle": "3D printing & Laser",
+    "3dText":
+      "Custom 3D prints, laser engravings and small productions. Perfect for prototypes, gifts or product personalization.",
+    customTitle: "Personalized products",
+    customText: "Design and production of personalized bags, T-shirts, bottles and more.",
     portfolioTitle: "Portfolio",
-    item1Title: "Custom dashcam mount",
-    item1Text: "Small batch for car meet — perfect fit & finish.",
-    item2Title: "Engraved nameplates",
-    item2Text: "Wooden nameplates and badges for interiors and events.",
-    item3Title: "Limited edition T-shirts",
-    item3Text: "Designs inspired by old-school racing culture.",
-    item4Title: "Miniature race car",
-    item4Text: "3D printed race car model for decoration.",
-    item5Title: "Engraved keychains",
-    item5Text: "Set of keychains with names or logos.",
-    item6Title: "New T-shirt design",
-    item6Text: "Limited edition T-shirt for petrolheads.",
+    portfolioCard1Title: "Fundraiser website",
+    portfolioCard1Text:
+      "A modern website for a dance competition team, designed to clearly present their fundraising projects.",
+    portfolioCard2Title: "ThrotleShop – clothing for car enthusiasts",
+    portfolioCard2Text:
+      "My Etsy shop where I sell apparel, bags and accessories for car lovers. I handle everything myself — from product pages to branding.",
+    portfolioCard3Title: "This website",
+    portfolioCard3Text:
+      "The website you’re viewing now — fully designed and coded by myself, built with a modern layout to showcase my projects and hobbies.",
+    portfolioExtraTitle1: "Coming soon",
+    portfolioExtraText1: "...",
+    portfolioExtraTitle2: "Coming soon",
+    portfolioExtraText2: "...",
+    portfolioExtraTitle3: "Coming soon",
+    portfolioExtraText3: "...",
     btnMore: "Show more",
     btnLess: "Show less",
-
-    // REQUEST
-    requestTitle: "Custom request",
-    requestText: "Fill in all details about your project — like materials, dimensions, quantity, deadline or budget. Add a reference photo or file if possible. I’ll try to reply within 48 hours (only Belgium — Antwerp/East Flanders/Flemish Brabant region).",
-    requestButton: "Send Email",
-
-    // CONTACT
-    contactTitle: "Contact & Socials",
-    contactEmail: "Email:",
-    contactFollow: "Follow me on social media:",
-    socialPinterest: "Pinterest",
-    socialFacebook: "Facebook",
-    socialInstagram: "Instagram",
-    socialTiktok: "TikTok",
-
-    // FOOTER
-    footerText: "© {year} Ara Technics — Arne",
-    copied: "Copied!"
+    contactTitle: "Contact",
+    contactText: "Have a question or want to collaborate? Feel free to send me an email below.",
+    contactBtn: "✉️ Send an email",
+    socialTitle: "Follow me on social media",
   }
 };
+/* === APPLY ENGLISH TRANSLATIONS === */
+function applyEnglish() {
+  document.querySelectorAll("[data-lang]").forEach(el => {
+    const key = el.getAttribute("data-lang");
+    if (translations.en[key]) {
+      el.innerHTML = translations.en[key];
+    }
+  });
+}
+
+/* === LANGUAGE TOGGLE BUTTON === */
+const langToggle = document.getElementById("lang-toggle");
+if (langToggle) {
+  let isEnglish = false;
+  langToggle.addEventListener("click", () => {
+    isEnglish = !isEnglish;
+    langToggle.textContent = isEnglish ? "NL" : "EN";
+    if (isEnglish) applyEnglish();
+    else location.reload();
+    document.dispatchEvent(new Event("languageChanged"));
+  });
+}
+
+
+document.addEventListener("languageChanged", () => {
+  initAboutToggle(); // heractiveer de toon meer knop na taalwissel
+});

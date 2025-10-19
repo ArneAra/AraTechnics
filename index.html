@@ -1,200 +1,227 @@
+<!-- =========================================
+     ARA TECHNICS - MAIN STYLESHEET
+     Auteur: Arne (Ara Technics)
+     Doel: moderne, snelle portfolio-website
+     ========================================= */-->
+
 <!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ara Technics — 3D, Laser & ThrotleShop</title>
+  <title>Ara Technics — Websites, 3D & Laser</title>
   <link rel="icon" type="image/png" href="fotos/aratechnics round.png" />
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css" />
 </head>
 
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9VLHBH17XT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9VLHBH17XT');
-</script>
-
-
-
-
-
 <body>
+  <!-- =========================
+       HEADER
+       ========================= -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="#" data-lang="logo">Ara Technics</a>
-      <nav class="nav">
+
+      <button id="mobile-toggle" class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="main-nav">
         <a href="#home" data-lang="navHome">Home</a>
         <a href="#about" data-lang="navAbout">Over mij</a>
+        <a href="#services" data-lang="navServices">Diensten</a>
         <a href="#portfolio" data-lang="navPortfolio">Portfolio</a>
-        <a href="#request" data-lang="navRequest">Aanvraag</a>
         <a href="#contact" data-lang="navContact">Contact</a>
       </nav>
-      <button class="cta" id="cta-shop" data-lang="shopBtn">ThrotleShop</button>
-      <button id="lang-toggle" class="cta small">EN</button>
+
+      <div class="header-cta">
+        <button class="cta small" id="lang-toggle">EN</button>
+        <button class="cta" id="cta-shop" data-lang="shopBtn">ThrotleShop</button>
+      </div>
     </div>
   </header>
 
-
-
-
-
-  
+  <!-- =========================
+       MAIN
+       ========================= -->
   <main>
+    <!-- =========================
+         HERO
+         ========================= -->
     <section id="home" class="hero">
       <div class="container">
         <h1 data-lang="homeTitle">Hoi, ik ben Arne <br> maker, ontwerper en autoliefhebber.</h1>
-        <p class="lead" data-lang="homeText">Ik ontwerp en maak custom 3D-prints, lasercuts. Ik heb ook een <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer"> etsy shop</a> waar ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers verkoop.</p>
+        <p class="lead" data-lang="homeText">
+          Ik ontwerp en maak custom <strong>Websites, 3D-prints en Lasercuts</strong>. 
+          Ik heb ook een <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer">etsy shop</a> 
+          waar ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers verkoop.
+        </p>
         <div class="hero-actions">
-          <a href="#request" class="btn " data-lang="btnRequest">Doe een aanvraag</a>
-          <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-lang="btnShop">Naar ThrotleShop</a>
+          <a href="#services" class="btn" data-lang="btnServices">Bekijk diensten</a>
+          <a href="#contact" class="btn btn-ghost" data-lang="btnContact">Contacteer mij</a>
         </div>
       </div>
     </section>
 
+    <!-- =========================
+         ABOUT / OVER MIJ
+         ========================= -->
+    <section id="about" class="container about">
+      <h2 data-lang="aboutTitle">Over mij</h2>
 
+      <p data-lang="aboutText1">Hoi, ik ben Arne — de maker achter <strong>Ara Technics</strong> en <strong>ThrotleShop</strong>.</p>
 
+      <p data-lang="aboutText2">
+        Ik maak graag websites op maat voor vrienden en kennisen. 
+        Daarnaast maak ik ook nog <strong>3D-prints, lasercutprojecten</strong> en gepersonaliseerde producten zoals tassen, flessen, sleutelhangers, 
+        <a href="#" id="toggle-about" class="more-link" data-lang="aboutToggle">Toon meer</a>.
+      </p>
 
+      <p data-lang="aboutText3">
+        ThrotleShop mijn zijproject, waar ik kleding en accessoires verkoop voor autoliefhebbers via Etsy.  
+        <a href="https://throtleshop.etsy.com" target="_blank" rel="noopener noreferrer">Bekijk ThrotleShop</a>
+      </p>
 
-<section id="about" class="container about">
-  <h2 data-lang="aboutTitle">Over mij</h2>
+      <p data-lang="aboutText4">
+        Bedankt dat je even langskomt en mijn werk bekijkt - ik blijf graag programeren, ontwerpen en creëren met passie.
+      </p>
+    </section>
 
-  <p data-lang="aboutIntro">Hoi, ik ben Arne — de persoon achter Ara Technics en ThrotleShop</p>
+    <!-- =========================
+         SERVICES
+         ========================= -->
+    <section id="services" class="container services">
+      <h2 data-lang="servicesTitle">Wat ik aanbied</h2>
 
-  <p data-lang="aboutStory1">Wat ooit begon als een hobby in 3D-printen, lasersnijden en ontwerpen gewoon voor de lol, is inmiddels een passie geworden waar ik bijna al mijn vrije tijd aan besteed.</p>
+      <div class="cards services-cards">
+        <div class="card service-card">
+          <div class="thumb service-icon">🌐</div>
+          <h4 data-lang="webTitle">Websites</h4>
+          <p data-lang="webText">
+            Eenvoudige websites, portfolio's maar dit kan in de toekomst uitgebreider worden. Ik focus op snelheid, gebruiksvriendelijkheid en een mooi, modern ontwerp.
+          </p>
+        </div>
 
-  <p><strong data-lang="aboutWhat">Wat ik zoal doe</strong><br>
-  <span data-lang="aboutStory2">Ik maak allerlei prints en laserprojecten, en ik programmeer graag. Deze website heb ik helemaal zelf gemaakt om te laten zien wat ik kan en doe. Ara Technics gaat voor mij vooral over het maken van dingen die handig, tof en op maat zijn.</span></p>
+        <div class="card service-card">
+          <div class="thumb service-icon">🖨️</div>
+          <h4 data-lang="3dTitle">3D-print & Laser</h4>
+          <p data-lang="3dText">
+            Custom 3D-prints, lasergraveerwerk en kleine producties. Ideaal voor prototypes, cadeaus of personalisatie van producten.
+          </p>
+        </div>
 
-  <p data-lang="aboutStory3">Op dit moment print en lasersnij ik vooral dingen voor mezelf, zoals bijvoorbeeld vaasjes, decoraties voor Halloween of Kerst, en andere kleine projecten. Maar ik zou het ook heel leuk vinden om in de toekomst voor andere mensen custom 3D-prints en laserprojecten te maken.</p>
-
-  <p><strong data-lang="aboutShop">ThrotleShop</strong><br>
-  <span data-lang="aboutStory4">ThrotleShop staat een beetje los van Ara Technics. Hier verkoop ik kleding, tassen, posters en andere leuke spullen voor petrolheads en autoliefhebbers. Het is een plek om mijn creatieve ideeën en passie voor auto’s met anderen te delen. <a href="http://www.throtleshop.etsy.com/" target="_blank" rel="noopener noreferrer">Bekijk ThrotleShop</a></span></p>
-
-  <p><strong data-lang="aboutThanksTitle">Bedankt!</strong><br>
-  <span data-lang="aboutThanksText">Bedankt dat je op mijn site kijkt en een kleine maker als ik steunt. Samen houden we de liefde voor techniek, ontwerpen en creatieve projecten levend!</span></p>
-</section>
-
-
-
-
-
-
-<section id="portfolio" class="container portfolio">
-  <h2 data-lang="portfolioTitle">Portfolio</h2>
-  
-  <div class="cards" id="portfolio-main">
-    <div class="card">
-      <div class="thumb" data-lang="item1Title">3D</div>
-      <h4 data-lang="item1Title">Custom mount voor dashcam</h4>
-      <p data-lang="item1Text">Kleine oplage voor clubmeet — fit & finish op maat.</p>
-    </div>
-
-    <div class="card">
-      <div class="thumb" data-lang="item2Title">Laser</div>
-      <h4 data-lang="item2Title">Gegraveerde naamplaatjes</h4>
-      <p data-lang="item2Text">Houten naamplaatjes en badges voor interieur en events.</p>
-    </div>
-
-    <div class="card">
-      <div class="thumb">
-        <img src="fotos/portfolio" alt="Kleding">
+        <div class="card service-card">
+          <div class="thumb service-icon">🛍️</div>
+          <h4 data-lang="customTitle">Gepersonaliseerde producten</h4>
+          <p data-lang="customText">
+            Ontwerp en levering van gepersonaliseerde tassen, T-shirts, drinkflessen en meer.
+          </p>
+        </div>
       </div>
-      <h4 data-lang="item3Title">Limited edition T-shirts</h4>
-      <p data-lang="item3Text">Designs geïnspireerd door old-school racecultuur.</p>
-    </div>
+    </section>
 
-  </div>
+    <!-- =========================
+         PORTFOLIO
+         ========================= -->
+    <section id="portfolio" class="container portfolio">
+      <h2 data-lang="portfolioTitle">Portfolio</h2>
 
+      <div class="cards" id="portfolio-main">
+        <div class="card">
+          <div class="thumb">
+            <img src="fotos/comming-soon.png" alt="Website voorbeeld 1">
+          </div>
+          <h4 data-lang="portfolioCard1Title">Inzamelactie-site</h4>
+          <p data-lang="portfolioCard1Text">Een moderne website voor een danswedstrijdteam, bedoeld om hun inzamelacties overzichtelijk te tonen.</p>
+        </div>
 
-  <div class="cards" id="portfolio-extra" >
+        <div class="card">
+          <div class="thumb">
+            <img src="fotos/portfolio/carguyshirt.png" alt="Kleding">
+          </div>
+          <h4 data-lang="portfolioCard2Title">ThrotleShop – kleding voor autoliefhebbers</h4>
+          <p data-lang="portfolioCard2Text">Mijn Etsy-shop waar ik kleding, tassen en accessoires verkoop autoliefhebbers. Ik doe alles zelf zoals: de productpagina’s en de online branding.</p>
+        </div>
 
-    <div class="card">
-      <div class="thumb">
-      <img src="fotos/portfolio" alt="Nieuwe T-shirt">
+        <div class="card">
+          <div class="thumb large-icon">
+            <div>🌐</div>
+          </div>
+          <h4 data-lang="portfolioCard3Title">Deze website</h4>
+          <p data-lang="portfolioCard3Text">De website die je nu bekijkt, volledig zelf ontworpen en geprogrameerd. Gebouwd met een moderne layout en bedoeld om mijn projecten en hobby’s overzichtelijk te presenteren.</p>
+        </div>
       </div>
-      <h4 data-lang="item4Title">Miniatuur raceauto</h4>
-      <p data-lang="item4Text">3D-geprint model van een raceauto voor decoratie.</p>
-    </div>
 
-    <div class="card">
-      <div class="thumb">
-      <img src="fotos/portfolio" alt="Nieuwe T-shirt">
+      <!-- Extra (verborgen) kaarten -->
+      <div class="cards hidden" id="portfolio-extra">
+        <div class="card">
+          <div class="thumb">
+            <img src="fotos/comming-soon.png" alt="Comming soon">
+          </div>
+          <h4 data-lang="portfolioExtraTitle1">Comming soon</h4>
+          <p data-lang="portfolioExtraText1">...</p>
+        </div>
+
+        <div class="card">
+          <div class="thumb">
+            <img src="fotos/comming-soon.png" alt="Comming soon">
+          </div>
+          <h4 data-lang="portfolioExtraTitle2">Comming soon</h4>
+          <p data-lang="portfolioExtraText2">...</p>
+        </div>
+
+        <div class="card">
+          <div class="thumb">
+            <img src="fotos/comming-soon.png" alt="Comming soon">
+          </div>
+          <h4 data-lang="portfolioExtraTitle3">Comming soon</h4>
+          <p data-lang="portfolioExtraText3">...</p>
+        </div>
       </div>
-      <h4 data-lang="item5Title">Gegraveerde sleutelhangers</h4>
-      <p data-lang="item5Text">Set sleutelhangers met namen of logo’s.</p>
-    </div>
 
-    <div class="card">
-      <div class="thumb">
-      <img src="fotos/portfolio" alt="Nieuwe T-shirt">
+      <div class="portfolio-actions">
+        <button id="load-more" class="btn" data-lang="btnMore">Toon meer</button>
+        <button id="show-less" class="btn hidden" data-lang="btnLess">Toon minder</button>
       </div>
-      <h4 data-lang="item6Title">Nieuwe T-shirt design</h4>
-      <p data-lang="item6Text">Limited edition T-shirt voor petrolheads.</p>
-    </div>
+    </section>
 
-  </div>
-
-  <button id="load-more" class="btn" data-lang="btnMore">Toon meer</button>
-  <button id="show-less" class="btn" data-lang="btnLess">Toon minder</button>
-</section>
-
-
-
-
-
-
-
-
-
-<section id="request" class="container request">
-  <h2 data-lang="requestTitle">Custom aanvraag</h2>
-  <p data-lang="requestText">
-    Vul alle informatie in die je wilt delen over je project, zoals materiaal, afmetingen, hoeveelheid, deadline of budget.  
-    Voeg indien mogelijk een voorbeeldfoto of een bestand toe.  
-    Ik probeer binnen <strong>48 uur</strong> te reageren (alleen België regio Antwerpen/Oost-Vlaanderen/Vlaams-Brabant).
-  </p>
-
-  <p>
-      <a href="mailto:info@aratechnics.be" class="btn" data-lang="requestButton">Stuur mail</a>
-  </p>
-
-
-</section>
-
-
-
-
-
+    <!-- =========================
+         CONTACT
+         ========================= -->
     <section id="contact" class="container contact">
-     <h2 data-lang="contactTitle">Contact & Socials</h2>
-     <p><span data-lang="contactEmail">E-mail:</span> <span class="copy-text" data-copy="info@aratechnics.be">info@aratechnics.be</span></p>
-     <div id="copy-popup" data-lang="copied">Gekopieerd!</div>
-      <p data-lang="contactFollow">Volg mij op social media:</p>
+      <h2 data-lang="contactTitle">Contact</h2>
+      <p data-lang="contactText">Heb je een vraag of wil je samenwerken? Stuur me gerust een mailtje via de knop hieronder.</p>
+
+      <a 
+        href="mailto:info@aratechnics.be?"
+        class="btn"
+        data-lang="contactBtn"
+      >
+        ✉️ Stuur een e-mail
+      </a>
+
+      <h3 data-lang="socialTitle">Volg me op sociale media</h3>
       <ul class="social-links">
-       <li><a href="https://www.pinterest.com/throttleshop/_saved/" target="_blank" rel="noopener noreferrer" data-lang="socialPinterest">Pinterest</a></li>
-       <li><a href="https://www.facebook.com/profile.php?id=61578725276672" target="_blank" rel="noopener noreferrer" data-lang="socialFacebook">Facebook</a></li>
-        <li><a href="https://www.instagram.com/throtle_shop/" target="_blank" rel="noopener noreferrer" data-lang="socialInstagram">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@throttleshop" target="_blank" rel="noopener noreferrer" data-lang="socialTiktok">TikTok</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61576394540068" target="_blank" rel="noopener">🔗 Facebook</a></li>
+        <li><a href="https://www.instagram.com/aratechnics/" target="_blank" rel="noopener">📷 Instagram</a></li>
       </ul>
     </section>
+
   </main>
 
+  <!-- =========================
+       FOOTER
+       ========================= -->
   <footer class="site-footer">
     <div class="container">
-      <small data-lang="footerText">© <span id="year"></span> Ara Technics — Arne</small>
+      <small>
+        © <span id="year"></span> Ara Technics — Arne <br>
+        <a href="privacyandcontact.html" rel="noopener">Privacy & Contact</a>
+      </small>
     </div>
   </footer>
 
-
-  <script src="index.js"></script>
-  <script src="lang.js"></script>
-
-
+  <script defer src="lang.js"></script>
+  <script defer src="index.js"></script>
 </body>
 </html>

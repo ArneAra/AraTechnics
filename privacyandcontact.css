@@ -1,0 +1,155 @@
+/* =========================================
+   ARA TECHNICS - PRIVACY & CONTACT STYLESHEET
+   Auteur: Arne (Ara Technics)
+   Doel: moderne, snelle privacy & contact pagina
+   ========================================= */
+
+/* ---------------------------
+   Root variables (kleuren / sizes)
+   --------------------------- */
+:root{
+  --bg: #0f1720;
+  --card: #0b1220;
+  --muted: #9aa6b2;
+  --accent: #7ae691;
+  --accent-dark: #3fd95f;
+  --text: #e6eef6;
+  --glass: rgba(255,255,255,0.03);
+  --max-width: 1100px;
+}
+
+/* ---------------------------
+   Basis / Reset
+   --------------------------- */
+* { box-sizing: border-box; }
+html,body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #07101a;
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-dark); text-decoration: underline; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* =========================
+   Header (fixed + blur)
+   ========================= */
+.site-header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), transparent);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 1rem 2rem;
+}
+.logo {
+  font-weight:700;
+  color: var(--accent);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* header CTA (taalknop) */
+.header-cta { display:flex; gap:0.6rem; align-items:center; }
+
+/* =========================
+   Buttons (universeel)
+   ========================= */
+.cta {
+  background: var(--accent);
+  color: #0b0b0b;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.cta.small {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.35rem 0.6rem;
+}
+.cta:hover { background: var(--accent-dark); color: #07101a; }
+
+/* universele .btn */
+.btn {
+  display:inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #07101a;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn:hover { background: var(--accent-dark); }
+
+/* =========================
+   Terug naar home knop (fixed)
+   ========================= */
+.btn-home {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: #07101a;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-home:hover { background: var(--accent-dark); }
+
+/* =========================
+   Main content
+   ========================= */
+main { padding-top: 100px; } /* ruimte voor fixed header */
+
+.privacy-contact h1 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.privacy-contact h2 {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.privacy-contact p, .privacy-contact ul {
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.privacy-contact ul { padding-left: 1.1rem; }
+
+/* Social links */
+.social-links { list-style:none; padding:0; display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem; }
+.social-links li a { font-weight:600; color:var(--accent); }
+
+/* Footer */
+.site-footer { padding:1.5rem 0; border-top:1px solid rgba(255,255,255,0.03); text-align:center; color:var(--muted); }
+
+/* Responsive */
+@media (max-width:900px){
+  .header-inner { padding:0.6rem 1rem; }
+  main { padding-top:120px; }
+  .container { padding-left:1.2rem; padding-right:1.2rem; }
+}

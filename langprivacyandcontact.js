@@ -16,7 +16,7 @@ const translations = {
       "Controller: Arne — Ara Technics (hobby). For analytical purposes, I use Google Analytics (basic configuration).",
     whatTitle: "What data and why",
     whatText:
-      "• When you send an email: your address and message content — to reply to your request. • Analytics: anonymous usage data collected by Google Analytics for statistics (no data selling). • External links (Instagram/Facebook/Etsy) lead to my own accounts — they don’t transmit data to third parties by themselves.",
+      "• When you send an email: your address and message content — to reply to your request. <br> • Analytics: anonymous usage data collected by Google Analytics for statistics (no data selling). <br>• External links (Instagram/Facebook/Etsy) lead to my own accounts — they don’t transmit data to third parties by themselves.",
     legalTitle: "Legal basis & retention",
     legalText:
       "Legal basis: your consent when sending an email, or my legitimate interest for analytics and website management. Retention policy: emails are kept for at least one month unless you request deletion earlier. Google Analytics data is stored according to Google’s default retention settings. You may object or request access via email.",

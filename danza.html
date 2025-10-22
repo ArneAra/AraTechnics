@@ -1,0 +1,161 @@
+<!-- =========================================
+     ARA TECHNICS - Hoofd pagina
+     Auteur: Arne (Ara Technics)
+     ========================================= -->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <!-- =========================================================
+       🎨 META EN ICONS
+  ========================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/fotos/danzateljee.webp" />
+  <title>B-ONE Inzamelacties</title>
+
+  <!-- =========================================================
+       🖌️ STIJLEN
+  ========================================================== -->
+  <link rel="stylesheet" href="danza.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- =========================================================
+       🧭 HEADER
+  ========================================================== -->
+  <header>
+    <img src="/fotos/danzateljee.webp" alt="B-ONE logo" />
+    <h1>B-ONE</h1>
+    <p>Steun het wedstrijdteam van Danzateljee!</p>
+  </header>
+
+  <!-- =========================================================
+       ℹ️ OVER ONS
+  ========================================================== -->
+  <section id="over">
+    <h2>Wie zijn wij?</h2>
+    <p>
+      Wij zijn de dansers van het wedstrijdteam <strong>B-ONE</strong>.<br> 
+      We trainen hard, hebben veel plezier en doen mee aan talrijke danswedstrijden.<br>
+      Via deze website kan je de inzamelacties van onze dansers volgen en steunen.
+    </p>
+    <img src="/fotos/danzateams-1.png" alt="danzateam logo" />
+  </section>
+
+  <!-- =========================================================
+       🎯 HUIDIGE EN KOMENDE ACTIES
+  ========================================================== -->
+  <section id="acties">
+
+    <!-- Huidige actie -->
+    <h2>Huidige actie</h2>
+    <div class="actie-card actie-met-fotos">
+      <img class="actie-img-links" src="/fotos/producten/truffels.png" alt="Chocolade truffels">
+      <div class="actie-info">
+        <h3 class="huidigeacctietitel">Eindejaarsactie!<br>Chocolates and Wine</h3>
+        <p>
+          Koop een doosje lekkere chocolade truffels en/of een fles wijn of 2, 3, ... 6,<br>
+          om onze nieuwe wedstrijdoutfits, wedstrijden, BK's, WK's en ons bootcamp te bekostigen.
+        </p>
+        <button id="openFormBtn">Doe mee!</button>
+      </div>
+      <img class="actie-img-rechts" src="/fotos/producten/wijn.avif" alt="Fles wijn">
+    </div>
+
+    <!-- Komende acties -->
+    <h2>Komende acties</h2>
+    <div class="actie-card">
+      <h3 class="huidigeacctietitel">Soon...</h3>
+      <p>Hou onze website in de gaten voor de volgende actie!</p>
+    </div>
+
+  </section>
+
+  <!-- =========================================================
+       ✉️ POPUP BESTELFORMULIER
+  ========================================================== -->
+  <div id="popupForm" class="popup">
+    <div class="popup-content">
+
+      <!-- Sluitknop -->
+      <span class="close" id="closePopup">&times;</span>
+      <h3>Bestelling</h3>
+
+      <!-- Stap 1: Productselectie -->
+      <div id="stap1" class="stap">
+        <h4 style="color:#78a199;">🍫 Chocolade Truffels (€8/doos)</h4>
+        <div class="producten-lijst">
+          <label><span>Melk</span><input type="number" id="truffel-melk" min="0" max="50" value="0"></label>
+          <label><span>Puur</span><input type="number" id="truffel-puur" min="0" max="50" value="0"></label>
+          <label><span>Wit</span><input type="number" id="truffel-wit" min="0" max="50" value="0"></label>
+        </div>
+
+        <h4 style="margin-top:20px; color:#78a199;">🍷 Wijnen (€12/fles)</h4>
+        <div class="producten-lijst">
+          <label><span>Rood</span><input type="number" id="wijn-rood" min="0" max="50" value="0"></label>
+          <label><span>Wit</span><input type="number" id="wijn-wit" min="0" max="50" value="0"></label>
+          <label><span>Rosé</span><input type="number" id="wijn-rose" min="0" max="50" value="0"></label>
+        </div>
+
+        <p id="totaalPrijs" style="margin-top:20px; font-weight:600; color:#78a199;">Totaal: €0</p>
+        <button id="naarStap2" class="submit-btn">Ga verder →</button>
+      </div>
+
+      <!-- Stap 2: Persoonsgegevens -->
+      <form id="orderForm" class="stap" style="display:none;">
+        <h4 style="color:#78a199;">📝 Gegevens</h4>
+
+        <label>Voornaam:</label>
+        <input type="text" id="voornaam" required placeholder="Voornaam">
+
+        <label>Achternaam:</label>
+        <input type="text" id="achternaam" required placeholder="Achternaam">
+
+        <label>Telefoonnummer:</label>
+        <input type="tel" id="telefoon" required pattern="[0-9\s\+\-]{8,}" placeholder="Telefoonnummer">
+
+        <label>E-mailadres:</label>
+        <input type="email" id="email" required placeholder="E-mailadres">
+
+        <label style="margin-top:20px;">Levering:</label>
+        <div class="levering-opties">
+          <label><input type="radio" name="levering" value="danser" required> Door een danser</label>
+          <label><input type="radio" name="levering" value="zelf" required> Zelf ophalen</label>
+        </div>
+
+        <div id="danserNaamContainer" style="display: none;">
+          <label>Naam van de danser:</label>
+          <input type="text" id="danserNaam" placeholder="Naam van de danser">
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-top:20px;">
+          <button type="button" id="terugStap1" class="submit-btn" style="width:48%;">← Terug</button>
+          <button type="submit" class="submit-btn" style="width:48%;">Bestellen</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       🔔 CUSTOM MELDING
+  ========================================================== -->
+  <div id="meldingBox" class="melding">
+    <div class="melding-content" id="meldingContent"></div>
+  </div>
+
+  <!-- =========================================================
+       ⚫ FOOTER
+  ========================================================== -->
+  <footer>
+    <p>© 2025 B-ONE Inzamelacties – Gemaakt door <a href="https://aratechnics.be" target="_blank">Aratechnics</a><br>
+    <a href="privacyandcontact.html">Privacyverklaring | contact</a></p>
+  </footer>
+
+  <!-- =========================================================
+       🖱️ SCRIPTS
+  ========================================================== -->
+  <script src="danza.js"></script>
+</body>
+</html>

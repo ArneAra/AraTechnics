@@ -26,7 +26,7 @@ header {
 }
 
 header img {
-  height: 120px;
+  height: 180px;
 }
 
 header h1 {
@@ -39,7 +39,7 @@ header p {
 }
 
 section {
-  padding: 40px 20px;
+  padding: 10px 20px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -108,6 +108,10 @@ h2 {
   flex: 1;
   min-width: 250px;
   padding: 10px;
+}
+
+.danzaimg{
+  margin-top: 100px;
 }
 
 

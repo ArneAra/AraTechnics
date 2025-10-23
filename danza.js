@@ -67,13 +67,12 @@ prijsInputs.forEach(input => {
 });
 
 function berekenTotaal() {
-  const truffelPrijs = 8;
-  const wijnPrijs = 12;
+  const truffelPrijs = 7;
+  const wijnPrijs = 9;
 
   const totaalTruffels = 
     Number(document.getElementById('truffel-melk').value) +
-    Number(document.getElementById('truffel-puur').value) +
-    Number(document.getElementById('truffel-wit').value);
+    Number(document.getElementById('truffel-mix').value);
 
   const totaalWijn = 
     Number(document.getElementById('wijn-rood').value) +
@@ -131,8 +130,7 @@ orderForm.addEventListener('submit', (event) => {
 
   const truffels = {
     melk: document.getElementById('truffel-melk').value,
-    puur: document.getElementById('truffel-puur').value,
-    wit: document.getElementById('truffel-wit').value
+    mix: document.getElementById('truffel-mix').value
   };
   const wijnen = {
     rood: document.getElementById('wijn-rood').value,
@@ -151,8 +149,8 @@ orderForm.addEventListener('submit', (event) => {
 
   const totaalTruffels = Object.values(truffels).reduce((a,b)=>a+Number(b),0);
   const totaalWijn = Object.values(wijnen).reduce((a,b)=>a+Number(b),0);
-  const prijsTruffels = totaalTruffels * 8;
-  const prijsWijn = totaalWijn * 12;
+  const prijsTruffels = totaalTruffels * 7;
+  const prijsWijn = totaalWijn * 9;
   const totaalPrijs = prijsTruffels + prijsWijn;
 
   const leveringTekst = levering === 'danser'
@@ -166,11 +164,10 @@ orderForm.addEventListener('submit', (event) => {
     `Naam: ${voornaam} ${achternaam}\n` +
     `Telefoon: ${telefoon}\n` +
     `E-mail: ${email}\n\n` +
-    `🍫 Chocolade Truffels (€8/doos):\n` +
+    `🍫 Chocolade Truffels (€7/doos):\n` +
     `- Melk: ${truffels.melk}\n` +
-    `- Puur: ${truffels.puur}\n` +
-    `- Wit: ${truffels.wit}\n\n` +
-    `🍷 Wijnen (€12/fles):\n` +
+    `- mix: ${truffels.mix}\n` +
+    `🍷 Wijnen (€9/fles):\n` +
     `- Rood: ${wijnen.rood}\n` +
     `- Wit: ${wijnen.wit}\n` +
     `- Rosé: ${wijnen.rose}\n\n` +

@@ -1,142 +1,98 @@
 <!-- =========================================
-     ARA TECHNICS - PRIVACY & CONTACT PAGE
+     ARA TECHNICS - privacy en contact pagina
      Auteur: Arne (Ara Technics)
-     Doel: Privacy en contact info pagina met moderne layout
-     ========================================= -->
+     ========================================= */-->
 
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ara Technics — Privacy & Contact</title>
-  <link rel="icon" type="image/png" href="fotos/aratechnics round.png" />
-  <link rel="stylesheet" href="privacyandcontact.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/fotos/danzateljee.webp" />
+  <title>Privacy & Contact – B-ONE</title>
+
+  <!-- Koppeling met CSS -->
+  <link rel="stylesheet" href="danza.css" />
+
+  <!-- Lettertype -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- =========================
-       HEADER (BLUR + TAAL)
-       ========================= -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" data-lang="logo">Ara Technics</a>
 
-      <div class="header-cta">
-        <!-- taalknop (EN/NL) -->
-        <button class="cta small" id="lang-toggle" aria-pressed="false">EN</button>
-      </div>
-    </div>
+  <header>
+    <img src="/fotos/danzateljee.webp" alt="B-ONE logo" />
+    <h1>B-ONE</h1>
+    <p>Het wedstrijdteam van Danzateljee!</p>
   </header>
 
-  <!-- =========================
-       TERUG NAAR HOOFDKNOP (ALTJD ZICHTBAAR)
-       ========================= -->
-  <a href="index.html" class="btn btn-home" data-lang="btnBackHome">← Terug naar home</a>
+  <section id="privacy">
+    <h2>Privacyverklaring</h2>
+    <p>
+      Deze website wordt beheerd door <strong>Ingeborg</strong>.<br>
+      Contactadres: 
+      <a href="mailto:b.one.inzamelacties@gmail.com" class="email-link">b.one.inzamelacties@gmail.com</a>
+    </p>
 
-  <!-- =========================
-       MAIN CONTENT - PRIVACY & CONTACT
-       ========================= -->
-  <main>
-    <section class="container privacy-contact">
-      <h1 data-lang="title">Privacy & Contact</h1>
+    <h3>Welke gegevens worden verzameld?</h3>
+    <p>
+      Via het bestelformulier op deze website worden de volgende persoonsgegevens verzameld:
+    </p>
+    <ul>
+      <li>Voornaam en achternaam</li>
+      <li>E-mailadres</li>
+      <li>Telefoonnummer</li>
+    </ul>
+    <p>
+      Deze gegevens worden uitsluitend gebruikt om de bestelling correct te kunnen verwerken en om, indien nodig, contact op te nemen over de bestelling.
+    </p>
 
-      <!-- Intro / samenvatting -->
-      <p data-lang="intro">
-        Deze pagina legt uit welke gegevens ik verzamel, waarom, hoe lang ik ze bewaar en welke rechten je hebt.
-        Ara Technics (hobbynaam: Arne) verwerkt alleen gegevens die jij vrijwillig toestuurt via e-mail of contactverzoeken.
+    <h3>Worden gegevens gedeeld met derden?</h3>
+    <p>
+      Nee, jouw gegevens worden <strong>niet gedeeld met derden</strong> en niet gebruikt voor commerciële doeleinden.
+    </p>
+
+    <h3>Bewaartermijn</h3>
+    <p>
+      De persoonsgegevens worden bewaard tot de inzamelactie waarvoor je besteld hebt is afgerond.
+      Daarna worden ze permanent verwijderd.
+    </p>
+
+    <h3>Rechten van bezoekers</h3>
+    <p>
+      Je hebt het recht om jouw gegevens in te zien, te laten corrigeren of te laten verwijderen.
+      Hiervoor kan je contact opnemen via 
+      <a href="mailto:b.one.inzamelacties@gmail.com" class="email-link">b.one.inzamelacties@gmail.com</a>.
+    </p>
+
+    <h3>Cookies en tracking</h3>
+    <p>
+      Deze website maakt <strong>geen gebruik van cookies</strong> of analytische diensten zoals Google Analytics.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Heb je vragen over de inzamelacties, bestellingen of de privacyverklaring?<br>
+      Neem gerust contact op:
+    </p>
+
+    <div class="contact-info">
+      <p><strong>E-mail:</strong> 
+        <a href="mailto:b.one.inzamelacties@gmail.com" class="email-link">b.one.inzamelacties@gmail.com</a>
       </p>
-
-      <!-- 1. Verantwoordelijke / hosting / tracking -->
-      <h2 data-lang="controllerTitle">Verantwoordelijke & hosting</h2>
-      <p data-lang="controllerText">
-        Verantwoordelijke: Arne — Ara Technics (hobby). Voor analytische doeleinden gebruik ik Google Analytics (basisconfiguratie).
-      </p>
-
-      <!-- 2. Welke gegevens en waarom -->
-      <h2 data-lang="whatTitle">Welke gegevens en waarom</h2>
-      <ul data-lang="whatText">
-        <li>Als je een e-mail stuurt: je e-mailadres en de inhoud van je bericht — om je vraag te beantwoorden.</li>
-        <li>Analytics: anonieme gebruiksgegevens verzameld door Google Analytics voor statistieken (geen verkoop van gegevens).</li>
-        <li>Externe links (Instagram/Facebook/Etsy) leiden naar mijn eigen accounts — er wordt geen data naar derden verzonden door deze links zelf.</li>
-      </ul>
-
-      <!-- 3. Rechtsgrond en bewaartermijn -->
-      <h2 data-lang="legalTitle">Rechtsgrond & bewaartermijn</h2>
-      <p data-lang="legalText">
-        Rechtsgrond: jouw toestemming bij het sturen van een e-mail of mijn gerechtvaardigd belang voor analytics en websitebeheer.  
-        Bewaarbeleid: e-mails bewaar ik minimaal een maand, tenzij je vraagt ze eerder te verwijderen. Google Analytics-gegevens worden bewaard volgens de standaardinstellingen van Google Analytics (instelbaar in de GA-property). Je kunt dit verzoeken of bezwaar maken (zie rechten hieronder).
-      </p>
-
-      <!-- 4. Rechten van betrokkenen -->
-      <h2 data-lang="rightsTitle">Je rechten</h2>
-      <p data-lang="rightsText">
-        Je hebt het recht op inzage, rectificatie, verwijdering (vergetelheid), beperking van verwerking, bezwaar en dataportabiliteit. Wil je één van deze rechten uitoefenen, mail naar <a href="mailto:info@aratechnics.be">info@aratechnics.be</a>. Je hebt ook het recht om een klacht in te dienen bij de Belgische Gegevensbeschermingsautoriteit.
-      </p>
-
-      <!-- 5. Eigendom & intellectueel eigendom -->
-      <h2 data-lang="ownershipTitle">Eigendom van ontwerpen & werk</h2>
-      <p data-lang="ownershipText">
-        Tenzij anders vastgelegd in een schriftelijk contract, blijven digitale ontwerpen (websites, 3D-ontwerpen, lasersnij-bestanden en grafische ontwerpen) eigendom van Ara Technics. Fysieke producten (3D-prints, lasercuts, kleding) worden aan de klant geleverd en vormen hun fysieke eigendom. Indien je het ontwerp wilt overkopen of exclusieve rechten wilt, kan dit via een afzonderlijk contract.
-      </p>
-
-      <!-- 6. Beveiliging -->
-      <h2 data-lang="securityTitle">Beveiliging</h2>
-      <p data-lang="securityText">
-        Ik bewaar e-mails in mijn persoonlijke mailbox. Ik onderneem redelijke technische maatregelen, maar voor gevoelige of vertrouwelijke gegevens adviseer ik om geen persoonlijke gevoelige info via e-mail te sturen.
-      </p>
-
-      <!-- 7. Externe diensten -->
-      <h2 data-lang="thirdPartyTitle">Externe diensten</h2>
-      <p data-lang="thirdPartyText">
-        Analytics: Google Analytics. Sociale profielen: Instagram en Facebook. Voor details en privacyinstellingen van deze diensten, raadpleeg hun eigen privacyverklaringen.
-      </p>
-
-      <!-- 8. Contact knop (mailto) / Socials -->
-      <h2 data-lang="contactTitle">Contact</h2>
-      <p data-lang="contactText">
-        Heb je vragen over privacy, wil je je gegevens laten verwijderen, of wil je een ontwerp kopen/licentiëren? Gebruik de knop hieronder om direct een e-mail te sturen.
-      </p>
-
-      <p>
-        <a href="mailto:info@aratechnics.be" class="btn" id="mailto-btn" data-lang="btnEmail">✉️ Stuur een e-mail</a>
-      </p>
-
-      <h3 data-lang="socialTitle">Volg & contacteer via</h3>
-      <ul class="social-links">
-        <li><a href="https://www.instagram.com/aratechnics/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61576394540068" target="_blank" rel="noopener">Facebook</a></li>
-        <li><a href="https://throtleshop.etsy.com" target="_blank" rel="noopener">ThrotleShop (Etsy)</a></li>
-      </ul>
-
-      <!-- 9. Verklaring hobby status -->
-      <h2 data-lang="hobbyTitle">Hobbyproject</h2>
-      <p data-lang="hobbyText">
-        Ara Technics is een hobbyproject van Arne. Dit document beschrijft de praktische werkwijze en hoe ik met gegevens omga; het is geen vervanging voor formele bedrijfsvoorwaarden. Voor zakelijke samenwerkingen kan aanvullende, formele contractering plaatsvinden.
-      </p>
-
-      <!-- 10. Wijzigingen in dit privacybeleid -->
-      <h2 data-lang="changesTitle">Wijzigingen</h2>
-      <p data-lang="changesText">
-        Dit privacy- en contactdocument kan van tijd tot tijd worden bijgewerkt. Belangrijke wijzigingen worden op deze pagina vermeld.
-      </p>
-
-    </section>
-  </main>
-
-  <!-- =========================
-       FOOTER
-       ========================= -->
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Ara Technics — Arne</small>
+      <p><strong>Mondeling:</strong> bij Lore of Ingeborg.</p>
     </div>
+  </section>
+
+  <footer>
+    <p>© 2025 B-ONE inzamelacties<br>
+    Gemaakt door <a href="https://aratechnics.be" target="_blank">Aratechnics</a></p>
   </footer>
 
-  <!-- =========================
-       SCRIPTS
-       ========================= -->
-  <script defer src="langprivacyandcontact.js"></script>
-  <script defer src="privacyandcontact.js"></script>
+  <!-- Terug naar home knop -->
+  <button class="terug-btn" onclick="window.location.href='danza.html'">← Terug naar home</button>
+
 </body>
 </html>

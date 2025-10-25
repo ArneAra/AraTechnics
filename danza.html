@@ -62,6 +62,7 @@
       <img class="actie-img-rechts" src="/fotos/producten/wijn.png" alt="Fles wijn">
     </div>
 
+
     <!-- Komende acties -->
     <h2>Komende acties</h2>
     <div class="actie-card">
@@ -85,20 +86,20 @@
 
       <!-- Stap 1: Productselectie -->
       <div id="stap1" class="stap">
-        <h4 style="color:#78a199;">🍫 Chocolade Truffels (€7/doos)</h4>
+        <h4>🍫 Chocolade Truffels (€7/doos)</h4>
         <div class="producten-lijst">
           <label><span>Melkchocolade truffels</span><input type="number" id="truffel-melk" min="0" max="50" value="0"></label>
           <label><span>Mix truffels (puur, melk en wit)</span><input type="number" id="truffel-mix" min="0" max="50" value="0"></label>
         </div>
 
-        <h4 style="margin-top:20px; color:#78a199;">🍷 Wijnen (€9/fles)</h4>
+        <h4 style="margin-top:40px;">🍷 Wijnen (€9/fles)</h4>
         <div class="producten-lijst">
           <label><span>Rood</span><input type="number" id="wijn-rood" min="0" max="50" value="0"></label>
           <label><span>Wit</span><input type="number" id="wijn-wit" min="0" max="50" value="0"></label>
           <label><span>Rosé</span><input type="number" id="wijn-rose" min="0" max="50" value="0"></label>
         </div>
 
-        <p id="totaalPrijs" style="margin-top:20px; font-weight:600; color:#78a199;">Totaal: €0</p>
+        <p id="totaalPrijs" style="margin-top:20px; font-weight:600;">Totaal: €0</p>
         <button id="naarStap2" class="submit-btn">Ga verder →</button>
       </div>
 
@@ -138,6 +139,25 @@
     </div>
   </div>
 
+
+  <!-- =========================================================
+       ✉️ POPUP foto
+  ========================================================== -->
+
+<!-- Afbeelding popup links-->
+<div id="imagePopup" class="image-popup">
+  <span class="close-popup">&times;</span>
+  <img id="popupImg" src="" alt="Vergrote afbeelding">
+</div>
+
+<!-- Afbeelding popup rechts -->
+<div id="imagePopup" class="image-popup">
+  <span class="close-popup">&times;</span>
+  <img id="popupImg" src="" alt="Vergrote afbeelding">
+</div>
+
+
+
   <!-- =========================================================
        🔔 CUSTOM MELDING
   ========================================================== -->
@@ -149,7 +169,7 @@
        ⚫ FOOTER
   ========================================================== -->
   <footer>
-    <p>© 2025 B-ONE Inzamelacties – Gemaakt door <a href="https://aratechnics.be" target="_blank">Aratechnics</a><br>
+    <p>© 2025 B-ONE Inzamelacties – Gemaakt door <a href="https://aratechnics.be" target="_blank" rel="noopener">Aratechnics</a><br>
     <a href="privacyandcontactdanza.html">Privacyverklaring | contact</a></p>
   </footer>
 

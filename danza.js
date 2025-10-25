@@ -39,6 +39,8 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+
+
 // === Custom melding ===
 const meldingBox = document.getElementById('meldingBox');
 const meldingContent = document.getElementById('meldingContent');
@@ -83,6 +85,8 @@ function berekenTotaal() {
   totaalPrijsTekst.textContent = `Totaal: €${totaal}`;
 }
 
+
+
 // === Stap 1 -> Stap 2 ===
 naarStap2Btn.addEventListener('click', () => {
   berekenTotaal();
@@ -101,6 +105,8 @@ terugStap1Btn.addEventListener('click', () => {
   stap1.style.display = 'block';
 });
 
+
+
 // === Levering-opties ===
 const leveringRadios = document.querySelectorAll('input[name="levering"]');
 const danserNaamContainer = document.getElementById('danserNaamContainer');
@@ -118,6 +124,8 @@ leveringRadios.forEach(radio => {
     }
   });
 });
+
+
 
 // === Bestelling verzenden ===
 orderForm.addEventListener('submit', (event) => {
@@ -183,5 +191,76 @@ orderForm.addEventListener('submit', (event) => {
     orderForm.reset();
     stap1.style.display = 'block';
     stap2.style.display = 'none';
+  });
+});
+
+
+
+
+// === Afbeelding popup (links) ===
+document.addEventListener("DOMContentLoaded", function() {
+  const popup = document.getElementById("imagePopup");
+  const popupImg = document.getElementById("popupImg");
+  const closeBtn = document.querySelector(".close-popup");
+
+  // Wanneer op een afbeelding wordt geklikt
+  document.querySelectorAll(".actie-img-links").forEach(img => {
+    img.addEventListener("click", () => {
+      popup.style.display = "flex";
+      popupImg.src = img.src;
+    });
+  });
+
+  // Klik op sluitknop
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Klik buiten de afbeelding
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+
+  // ESC toets om te sluiten
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      popup.style.display = "none";
+    }
+  });
+});
+
+// === Afbeelding popup (rechts) ===
+document.addEventListener("DOMContentLoaded", function() {
+  const popup = document.getElementById("imagePopup");
+  const popupImg = document.getElementById("popupImg");
+  const closeBtn = document.querySelector(".close-popup");
+
+  // Wanneer op een afbeelding wordt geklikt
+  document.querySelectorAll(".actie-img-rechts").forEach(img => {
+    img.addEventListener("click", () => {
+      popup.style.display = "flex";
+      popupImg.src = img.src;
+    });
+  });
+
+  // Klik op sluitknop
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Klik buiten de afbeelding
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+
+  // ESC toets om te sluiten
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      popup.style.display = "none";
+    }
   });
 });

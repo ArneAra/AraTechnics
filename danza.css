@@ -49,6 +49,9 @@ h2 {
   margin-bottom: 15px;
 }
 
+.danzaimg{
+  margin-top: 100px;
+}
 
 
 
@@ -96,6 +99,15 @@ h2 {
   text-align: center;
 }
 
+
+.actie-info {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+}
+
+
+/* --- img --- */
 .actie-img-links,
 .actie-img-rechts {
   width: 160px;
@@ -104,15 +116,49 @@ h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.actie-info {
-  flex: 1;
-  min-width: 250px;
-  padding: 10px;
+.image-popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
 }
 
-.danzaimg{
-  margin-top: 100px;
+.image-popup img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  animation: zoomIn 0.3s ease;
 }
+
+.image-popup .close-popup {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.image-popup .close-popup:hover {
+  color: #a9edde;
+}
+
+/* Zoom in animatie */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+
 
 
 

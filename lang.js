@@ -56,6 +56,9 @@ const translations = {
     contactText: "Have a question or want to collaborate? Feel free to send me an email below.",
     contactBtn: "✉️ Send an email",
     socialTitle: "Follow me on social media",
+    cookieText: "This website uses only essential cookies to analyse usage.",
+    cookieAccept: "Okay, got it"
+
   }
 };
 /* === APPLY ENGLISH TRANSLATIONS === */

@@ -16,7 +16,7 @@
   <!-- =========================================================
        🖌️ STIJLEN
   ========================================================== -->
-  <link rel="stylesheet" href="danza.css" />
+  <link rel="stylesheet" href="danza.css?v=1" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -99,6 +99,11 @@
           <label><span>Rosé</span><input type="number" id="wijn-rose" min="0" max="50" value="0"></label>
         </div>
 
+        <h4 style="margin-top:40px;">💵 Vrije gift</h4>
+        <div class="producten-lijst">
+          <label>Bedrag (€)<input type="number" id="vrije-gift" max="1000000" value="0"></label>
+        </div>
+
         <p id="totaalPrijs" style="margin-top:20px; font-weight:600;">Totaal: €0</p>
         <button id="naarStap2" class="submit-btn">Ga verder →</button>
       </div>
@@ -176,6 +181,6 @@
   <!-- =========================================================
        🖱️ SCRIPTS
   ========================================================== -->
-  <script src="danza.js"></script>
+  <script src="danza.js?v=1"></script>
 </body>
 </html>

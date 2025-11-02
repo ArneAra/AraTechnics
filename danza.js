@@ -41,18 +41,36 @@ window.addEventListener('keydown', (e) => {
 
 
 
-// === Custom melding ===
+// === Custom melding (met 3 sec wachttijd & countdown) ===
 const meldingBox = document.getElementById('meldingBox');
 const meldingContent = document.getElementById('meldingContent');
 
-function showMessage(tekst, callback) {
+function showMessage(tekst, callback, wachttijd = 0) {
   meldingContent.innerHTML = `<p>${tekst}</p><button id="meldingOk">Oké</button>`;
   meldingBox.style.display = 'flex';
-  document.getElementById('meldingOk').addEventListener('click', () => {
+  const okButton = document.getElementById('meldingOk');
+
+  if (wachttijd > 0) {
+    okButton.disabled = true;
+    let tijd = wachttijd;
+    okButton.textContent = `Oké (${tijd})`;
+    const countdown = setInterval(() => {
+      tijd--;
+      okButton.textContent = tijd > 0 ? `Oké (${tijd})` : 'Oké';
+      if (tijd <= 0) {
+        clearInterval(countdown);
+        okButton.disabled = false;
+      }
+    }, 1000);
+  }
+
+  okButton.addEventListener('click', () => {
     meldingBox.style.display = 'none';
     if (callback) callback();
   });
 }
+
+
 
 // === Prijsberekening + limietcontrole ===
 const prijsInputs = document.querySelectorAll('#stap1 input[type="number"]');
@@ -145,7 +163,7 @@ leveringRadios.forEach(radio => {
 
 
 
-// === Bestelling verzenden (gefixt) ===
+// === Bestelling verzenden ===
 orderForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -155,14 +173,15 @@ orderForm.addEventListener('submit', (event) => {
   const email = document.getElementById('email').value.trim();
 
   const truffels = {
-    melk: Number(document.getElementById('truffel-melk').value),
-    mix: Number(document.getElementById('truffel-mix').value)
+    melk: document.getElementById('truffel-melk').value,
+    mix: document.getElementById('truffel-mix').value
   };
   const wijnen = {
-    rood: Number(document.getElementById('wijn-rood').value),
-    wit: Number(document.getElementById('wijn-wit').value),
-    rose: Number(document.getElementById('wijn-rose').value)
+    rood: document.getElementById('wijn-rood').value,
+    wit: document.getElementById('wijn-wit').value,
+    rose: document.getElementById('wijn-rose').value
   };
+
 
   const leveringRadio = document.querySelector('input[name="levering"]:checked');
   const levering = leveringRadio ? leveringRadio.value : '';
@@ -173,20 +192,15 @@ orderForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const totaalTruffels = Object.values(truffels).reduce((a, b) => a + b, 0);
-  const totaalWijn = Object.values(wijnen).reduce((a, b) => a + b, 0);
+  const totaalTruffels = Object.values(truffels).reduce((a,b)=>a+Number(b),0);
+  const totaalWijn = Object.values(wijnen).reduce((a,b)=>a+Number(b),0);
   const prijsTruffels = totaalTruffels * 7;
   const prijsWijn = totaalWijn * 9;
-  const totaalvrijegift = Number(document.getElementById('vrije-gift').value);
-  const totaalPrijs = prijsTruffels + prijsWijn + totaalvrijegift;
-
-  if (totaalPrijs === 0) {
-    showMessage("Kies minstens één product of vrije gift om verder te gaan.");
-    return;
-  }
+  const vrijegift = Number(document.getElementById('vrije-gift').value);
+  const totaalPrijs = prijsTruffels + prijsWijn + vrijegift;
 
   const leveringTekst = levering === 'danser'
-    ? `Door danser: ${danserNaam || '(geen naam opgegeven)'}`
+    ? `Door danser: ${danserNaam || '(geen naam opgegeven)'}` 
     : 'Zelf ophalen';
 
   const beheerEmail = "b.one.inzamelacties@gmail.com";
@@ -198,101 +212,59 @@ orderForm.addEventListener('submit', (event) => {
     `E-mail: ${email}\n\n` +
     `🍫 Chocolade Truffels (€7/doos):\n` +
     `- Melk: ${truffels.melk}\n` +
-    `- Mix: ${truffels.mix}\n` +
+    `- mix: ${truffels.mix}\n` +
     `🍷 Wijnen (€9/fles):\n` +
     `- Rood: ${wijnen.rood}\n` +
     `- Wit: ${wijnen.wit}\n` +
     `- Rosé: ${wijnen.rose}\n\n` +
-    `Vrije gift: €${totaalvrijegift}\n\n` +
+    `Vrijegift: ${vrijegift}\n\n` +
     `Levering: ${leveringTekst}\n\n` +
     `💰 Totaalprijs: €${totaalPrijs}\n\n` +
-    `U ontvangt een bevestiging per e-mail met een betalingsverzoek. Gelieve te betalen om uw bestelling definitief te bevestigen.`
+    `U ontvangt een bevestiging per e-mail met een betalingsverzoek, gelieve te betalen om uw bestelling definitief te bevestigen.`
   );
 
+  // toont melding met 3 sec wachttijd op de "Oké"-knop
   showMessage(
-    `Je bestelling wordt klaargemaakt in je e-mailprogramma.<br><br><strong>Totale prijs:</strong> €${totaalPrijs}<br><br>Vergeet niet om daarna op ‘Verzenden’ te klikken!`,
+    `Als jij op oké drukt verschijnt een e-mail met je bestelling. Binnen de 48 uur ontvangt je een e-mail met een betalingsverzoek.
+    <br><br><strong>Totale prijs:</strong> €${totaalPrijs}<br><br>
+    Vergeet niet om daarna op ‘Verzenden’ te klikken!`,
     () => {
-      try {
-        const mailtoLink = `mailto:${beheerEmail}?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
-      } catch (err) {
-        console.error("Fout bij openen van mailprogramma:", err);
-        showMessage("Er ging iets mis bij het openen van je e-mailprogramma. Probeer opnieuw of stuur een mail naar b.one.inzamelacties@gmail.com.");
-      }
+      const mailtoLink = `mailto:${beheerEmail}?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
       popupForm.style.display = 'none';
       orderForm.reset();
       stap1.style.display = 'block';
       stap2.style.display = 'none';
-      berekenTotaal();
-    }
+    },
+    3 // ← wachttijd in seconden
   );
 });
 
 
 
-
-
-// === Afbeelding popup (links) ===
+// === Afbeelding popup ===
 document.addEventListener("DOMContentLoaded", function() {
   const popup = document.getElementById("imagePopup");
   const popupImg = document.getElementById("popupImg");
   const closeBtn = document.querySelector(".close-popup");
 
-  // Wanneer op een afbeelding wordt geklikt
-  document.querySelectorAll(".actie-img-links").forEach(img => {
+  document.querySelectorAll(".actie-img-links, .actie-img-rechts").forEach(img => {
     img.addEventListener("click", () => {
       popup.style.display = "flex";
       popupImg.src = img.src;
     });
   });
 
-  // Klik op sluitknop
   closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
 
-  // Klik buiten de afbeelding
   popup.addEventListener("click", (e) => {
     if (e.target === popup) {
       popup.style.display = "none";
     }
   });
 
-  // ESC toets om te sluiten
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      popup.style.display = "none";
-    }
-  });
-});
-
-// === Afbeelding popup (rechts) ===
-document.addEventListener("DOMContentLoaded", function() {
-  const popup = document.getElementById("imagePopup");
-  const popupImg = document.getElementById("popupImg");
-  const closeBtn = document.querySelector(".close-popup");
-
-  // Wanneer op een afbeelding wordt geklikt
-  document.querySelectorAll(".actie-img-rechts").forEach(img => {
-    img.addEventListener("click", () => {
-      popup.style.display = "flex";
-      popupImg.src = img.src;
-    });
-  });
-
-  // Klik op sluitknop
-  closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
-
-  // Klik buiten de afbeelding
-  popup.addEventListener("click", (e) => {
-    if (e.target === popup) {
-      popup.style.display = "none";
-    }
-  });
-
-  // ESC toets om te sluiten
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       popup.style.display = "none";

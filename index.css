@@ -738,24 +738,38 @@ section, .text, p, h2, h3 {
    📱 Telefoon – ALLE animaties en transities uitschakelen
 ========================================================= */
 @media (max-width: 900px), (pointer: coarse) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-  }
-
-  /* Verberg of neutraliseer GSAP / ScrollTrigger effecten */
+  /* Alleen animaties op scroll en GSAP neutraliseren */
   [data-aos],
   .fade-in,
   .reveal,
   .scroll-animate,
   .gsap-animate,
-  .gsap,
-  section,
+  .hero,
   .card,
-  .hero {
+  section {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    animation: none !important;
+  }
+
+  /* Laat positionering van vaste elementen intact */
+  .cookie-popup,
+  #copy-popup,
+  .modal,
+  .close {
+    transform: translateX(-50%) !important;
+    opacity: 1 !important;
+    transition: opacity 0.3s ease !important;
+  }
+
+  /* Hero en tekst zichtbaar forceren */
+  .hero h1,
+  .hero p,
+  section p,
+  section h2,
+  section h3 {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

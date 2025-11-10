@@ -734,42 +734,32 @@ section, .text, p, h2, h3 {
   transform: translateY(0);
 }
 
-/* =========================================================
-   📱 Telefoon – ALLE animaties en transities uitschakelen
-========================================================= */
+/* =========================================
+   🚀 Mobiel – direct tonen, geen fade of delay
+   ========================================= */
 @media (max-width: 900px), (pointer: coarse) {
-  /* Alleen animaties op scroll en GSAP neutraliseren */
   [data-aos],
   .fade-in,
   .reveal,
   .scroll-animate,
   .gsap-animate,
   .hero,
-  .card,
-  section {
+  section,
+  .card {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     animation: none !important;
   }
 
-  /* Laat positionering van vaste elementen intact */
-  .cookie-popup,
-  #copy-popup,
-  .modal,
-  .close {
-    transform: translateX(-50%) !important;
-    opacity: 1 !important;
-    transition: opacity 0.3s ease !important;
-  }
-
-  /* Hero en tekst zichtbaar forceren */
-  .hero h1,
-  .hero p,
-  section p,
-  section h2,
-  section h3 {
+  /* Ook binneninhoud forceren */
+  .hero *,
+  section *,
+  .card * {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
   }
 }

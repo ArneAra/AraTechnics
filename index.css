@@ -677,6 +677,23 @@ html, body {
   }
 }
 
+
+/* =========================================
+   📱 iPhone visibility fix – animaties zichtbaar maken
+   ========================================= */
+@supports (-webkit-touch-callout: none) {
+  [data-aos],
+  .fade-in,
+  .reveal,
+  .hidden,
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
 section, .text, p, h2, h3 {
   backface-visibility: visible !important;
   transform: none !important;

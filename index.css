@@ -676,3 +676,8 @@ html, body {
     overflow: hidden;
   }
 }
+
+section, .text, p, h2, h3 {
+  backface-visibility: visible !important;
+  transform: none !important;
+}

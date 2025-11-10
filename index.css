@@ -177,6 +177,8 @@ a:hover {
   line-height: 1.6;
 }
 
+
+
 /* =========================================================
    🧩 ALGEMENE KAARTEN OPMAAK
 ========================================================= */
@@ -316,8 +318,48 @@ a:hover {
   line-height: 1;
 }
 
+/* === Image modal (centraal beeld) === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
+.modal-content {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  animation: zoomIn 0.3s ease;
+}
 
+/* Smooth animatie bij openen */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Sluitknop rechtsboven */
+.close {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 10000;
+}
+
+.close:hover {
+  color: #ff5555;
+}
 
 /* =========================================================
    ✉️ CONTACTFORMULIER
@@ -423,8 +465,6 @@ a:hover {
   color: #07101a;
 }
 
-
-
 /* =========================================================
    ⚫ FOOTER + SOCIALS
 ========================================================= */
@@ -460,9 +500,179 @@ a:hover {
 }
 
 /* =========================================================
+   📱 MOBIELE AANPASSINGEN (EXTRA)
+========================================================= */
+@media (max-width: 800px) {
+
+  /* 🔧 Wat ik aanbied – icoontjes verbergen */
+  .services .thumb {
+    display: none;
+  }
+
+  /* 📸 Portfolio – grotere beelden op mobiel */
+
+  .portfolio .thumb {
+    width: 70%;
+  }
+
+}
+
+/* =========================================================
+   📱 MOBIELE AANPASSINGEN — Forceer verbergen icoontjes
+   Breakpoint: 800px (smartphones + kleine tablets)
+========================================================= */
+@media (max-width: 800px) {
+
+  /* Verberg alle gebruikelijke icon containers binnen services */
+  .services .service-icon,
+  .services .thumb,               /* als je icons in .thumb zet */
+  .services .service-card i,
+  .services .service-card svg,
+  .services .service-card img.icon,
+  .services .service-card .icon,
+  .services .service-card::before, /* in geval van pseudo-elementen */
+  .services .service-card::after {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Zorg dat de tekst in de kaarten netjes gecentreerd staat en meer ruimte krijgt */
+  .services .service-card {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .services .service-card h4 {
+    margin-top: 0.25rem;
+    font-size: 1.05rem;
+  }
+
+  .services .service-card p {
+    margin-top: 0.4rem;
+    font-size: 0.98rem;
+    color: var(--muted);
+  }
+
+  /* Kleine layoutfixes zodat er geen horizontaal scroll meer kan ontstaan */
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+
+/* =========================================================
    🖱️ SCROLLBAR
 ========================================================= */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #0b1220; border-radius: 4px; }
 ::-webkit-scrollbar-thumb { background: #3fd95f; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #7ae691; }
+
+/* =========================================================
+   Scroll effects
+========================================================= */
+section, .hero, .card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+/* 🧭 Fix horizontale scrollbar door GSAP-animaties */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ✨ Hover 3D tilt + glow effect op kaarten */
+.card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform-origin: center;
+}
+
+.card:hover {
+  transform: translateY(-6px) rotateX(3deg) rotateY(-3deg) scale(1.02);
+  box-shadow: 0 10px 25px rgba(122, 230, 145, 0.25);
+}
+
+/* 🔘 Hover feedback voor knoppen */
+.btn, .cta {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover, .cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(122, 230, 145, 0.3);
+}
+
+.btn:active, .cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.nav a {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.hero h1:hover {
+  color: var(--accent-dark);
+  text-shadow: 0 0 10px rgba(122, 230, 145, 0.4);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.hero .btn:hover {
+  color: var(--text) !important;
+}
+
+
+/* 🪄 Subtiele depth in hero en icoontjes */
+.hero {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.service-icon {
+  display: inline-block;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+
+/* Fix: centreer service-icoontjes op desktop */
+@media (min-width: 801px) {
+  /* maak het icon-vak een perfect vierkant en centreer de inhoud */
+  .services .service-card .thumb {
+    width: 200px;                /* vaste breedte voor consistente look */
+    height: 150px;               /* vaste hoogte zodat het altijd precies centreert */
+    margin: 0 auto 0.6rem;       /* centreer horizontaal en geef onderruimte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass);    /* behoud bestaande uitstraling */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}

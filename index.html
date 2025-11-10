@@ -1,17 +1,48 @@
 <!-- =========================================
      ARA TECHNICS - MAIN STYLESHEET
      Auteur: Arne (Ara Technics)
-     Je moet hier niet kijken dat weet je he
-     ========================================= */-->
+     ========================================= -->
 
 <!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Ara Technics — Websites, 3D & Laser</title>
   <link rel="icon" type="image/png" href="fotos/aratechnics round.png" />
-  <link rel="stylesheet" href="index.css" />
+
+  <link rel="stylesheet" href="index.css?v=1.1" />
+
+  <meta name="description" content="Ara Technics – Websites, 3D en Laserprojecten op maat door Arne. Ontwerp, personalisatie en ThrotleShop.">
+  <meta property="og:title" content="Ara Technics – Websites, 3D & Laser">
+  <meta property="og:description" content="Portfolio en projecten van Ara Technics, door Arne.">
+  <meta property="og:image" content="fotos/aratechnics round.png">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f1720">
+
+    <!-- Hotjar analytics -->
+
+  <script src="https://t.contentsquare.net/uxa/cf27f59992785.js"></script>
+
+
+  <!-- Google analytics  -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VLHBH17XT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9VLHBH17XT');
+
+  </script>
+
+  <!-- scroll animations  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -129,7 +160,7 @@
       <div class="cards" id="portfolio-main">
         <div class="card">
           <div class="thumb">
-            <img src="fotos/comming-soon.png" alt="Website voorbeeld 1">
+            <img src="fotos/portfolio/danza-inzamelactie-website.png" alt="Website voorbeeld 1">
           </div>
           <h4 data-lang="portfolioCard1Title">Inzamelactie-site</h4>
           <p data-lang="portfolioCard1Text">Een moderne website voor een danswedstrijdteam, bedoeld om hun inzamelacties overzichtelijk te tonen.</p>
@@ -193,7 +224,7 @@
       <p data-lang="contactText">Heb je een vraag of wil je samenwerken? Stuur me gerust een mailtje via de knop hieronder.</p>
 
       <a 
-        href="mailto:info@aratechnics.be?"
+        href="mailto:&#105;&#110;&#102;&#111;&#64;&#97;&#114;&#97;&#116;&#101;&#99;&#104;&#110;&#105;&#99;&#115;&#46;&#98;&#101;"
         class="btn"
         data-lang="contactBtn"
       >
@@ -211,13 +242,20 @@
 
 
   <!-- =========================================
-       COOKIE POPUP (ESSENTIËLE COOKIES)
+       COOKIE POPUP 
        ========================================= -->
   <div id="cookie-popup" class="cookie-popup" data-lang="cookieText">
    Deze website gebruikt enkel essentiële cookies om het gebruik te analyseren. 
    <button id="cookie-accept" class="btn small" data-lang="cookieAccept">Oké, begrepen</button>
   </div>
 
+  <!-- =========================================
+       picture POPUP 
+       ========================================= -->
+    <div id="image-modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img" alt="">
+    </div>
 
 
   <!-- =========================
@@ -232,8 +270,8 @@
     </div>
   </footer>
 
-  <script defer src="cookieconsent.js"></script>
-  <script defer src="lang.js"></script>
-  <script defer src="index.js"></script>
+  <script defer src="cookieconsent.js?v=1"></script>
+  <script defer src="lang.js?v=1"></script>
+  <script defer src="index.js?v=1.1"></script>
 </body>
 </html>

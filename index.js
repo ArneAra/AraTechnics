@@ -3,6 +3,13 @@
    Auteur: Arne (Ara Technics)
    ===================================================== */
 
+// Zet GSAP uit op mobiele apparaten
+if (window.matchMedia("(max-width: 900px), (pointer: coarse)").matches) {
+  gsap.globalTimeline.clear(); // stopt alle GSAP-animaties
+  ScrollTrigger.killAll();     // stopt ScrollTrigger
+}
+
+
 /* === "Toon meer" functie (herbruikbaar) === */
 function initAboutToggle() {
   const toggleLink = document.getElementById("toggle-about");

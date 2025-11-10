@@ -694,6 +694,23 @@ html, body {
 }
 
 
+/* =========================================
+   📱 Mobiele versie – animaties uitschakelen
+   ========================================= */
+@media (max-width: 900px) {
+  [data-aos],
+  .fade-in,
+  .reveal,
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+
 section, .text, p, h2, h3 {
   backface-visibility: visible !important;
   transform: none !important;

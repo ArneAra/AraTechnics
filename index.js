@@ -124,6 +124,27 @@ if (loadMoreBtn && showLessBtn && extraCards) {
   });
 }
 
+// ✅ iPhone-vriendelijke versie van de observer
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // voorkomt dubbele triggers
+      }
+    });
+  },
+  {
+    root: null,
+    // iets ruimere marge helpt iOS Safari beter detecteren
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0.05
+  }
+);
+
+// observeer alle elementen die moeten binnenfaden
+document.querySelectorAll('.fade-in, [data-aos], .reveal, .scroll-animate')
+  .forEach(el => observer.observe(el));
 
 
 

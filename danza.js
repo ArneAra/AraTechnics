@@ -226,9 +226,12 @@ orderForm.addEventListener('submit', (event) => {
 
   // toont melding met 3 sec wachttijd op de "Oké"-knop
   showMessage(
-    `Als jij op oké drukt verschijnt een e-mail met je bestelling. Binnen de 48 uur ontvangt je een e-mail met een betalingsverzoek.
-    <br><br><strong>Totale prijs:</strong> €${totaalPrijs}<br><br>
-    Vergeet niet om daarna op ‘Verzenden’ te klikken!`,
+    `Als jij op oké drukt verschijnt een e-mail met je bestelling. <br>
+    Vergeet niet om daarna op ‘Verzenden’ te klikken! <br>
+    Binnen de 48 uur ontvangt je een e-mail met een betalingsverzoek. <br>
+
+
+    <br><br><strong>Totale prijs:</strong> €${totaalPrijs}`,
     () => {
       const mailtoLink = `mailto:${beheerEmail}?bcc=${bccEmail}&subject=${subject}&body=${body}`;
       window.location.href = mailtoLink;

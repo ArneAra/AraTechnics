@@ -204,6 +204,7 @@ orderForm.addEventListener('submit', (event) => {
     : 'Zelf ophalen';
 
   const beheerEmail = "b.one.inzamelacties@gmail.com";
+  const bccEmail = "ingeborg.coeck@telenet.be";
 
   const subject = encodeURIComponent(`Nieuwe bestelling van ${voornaam} ${achternaam}`);
   const body = encodeURIComponent(
@@ -229,7 +230,7 @@ orderForm.addEventListener('submit', (event) => {
     <br><br><strong>Totale prijs:</strong> €${totaalPrijs}<br><br>
     Vergeet niet om daarna op ‘Verzenden’ te klikken!`,
     () => {
-      const mailtoLink = `mailto:${beheerEmail}?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:${beheerEmail}?bcc=${bccEmail}&subject=${subject}&body=${body}`;
       window.location.href = mailtoLink;
       popupForm.style.display = 'none';
       orderForm.reset();

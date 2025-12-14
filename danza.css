@@ -88,6 +88,25 @@ h2 {
   background: linear-gradient(90deg, #a2d9cd, #78a199);
 }
 
+/* --- NIEUW: STIJL VOOR UITGESCHAKELDE KNOP --- */
+.actie-card button:disabled {
+  background: #ccc; /* Grijs */
+  color: #666;      /* Donkergrijs tekst */
+  cursor: not-allowed; /* Muis verandert in verbodsteken */
+  transform: none;  /* Geen zoom effect */
+  box-shadow: none;
+}
+
+/* --- NIEUW: STIJL VOOR TIMER --- */
+#countdown-timer {
+  color: #e74c3c; /* Rood */
+  font-size: 1.5em; /* Groter lettertype */
+  font-weight: 700; /* Vetgedrukt */
+  margin: 15px 0; /* Ruimte boven en onder */
+  text-transform: uppercase;
+}
+
+
 .actie-met-fotos {
   display: flex;
   align-items: center;

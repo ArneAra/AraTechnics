@@ -275,3 +275,43 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+
+// === TIMER FUNCTIONALITEIT ===
+// Doeldatum: 15 december 2025 om 23:59:59
+var countDownDate = new Date("Dec 15, 2025 23:59:59").getTime();
+
+var timerInterval = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  // Berekeningen voor dagen, uren, minuten en seconden
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Elementen ophalen
+  var timerElement = document.getElementById("countdown-timer");
+  var bestelKnop = document.getElementById("openFormBtn");
+
+  if (timerElement) {
+    timerElement.innerHTML = "NOG: " + days + "d " + hours + "u "
+    + minutes + "m " + seconds + "s ";
+
+    // Als de tijd op is
+    if (distance < 0) {
+      clearInterval(timerInterval);
+      
+      // Timer tekst aanpassen
+      timerElement.innerHTML = "ACTIE AFGELOPEN";
+      timerElement.style.color = "grey";
+
+      // Knop uitschakelen
+      if (bestelKnop) {
+        bestelKnop.disabled = true;
+        bestelKnop.textContent = "Gesloten";
+      }
+    }
+  }
+}, 1000);
